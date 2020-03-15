@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.user.mapper.USUserinfoDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.user.model.USUserinfoDO">
+        <id column="uid" property="uid" />
+        <result column="name" property="name" />
+        <result column="nickname" property="nickname" />
+        <result column="showname" property="showname" />
+        <result column="idtype" property="idtype" />
+        <result column="identityid" property="identityid" />
+        <result column="gender" property="gender" />
+        <result column="birthday" property="birthday" />
+        <result column="college" property="college" />
+        <result column="address" property="address" />
+        <result column="qq" property="qq" />
+        <result column="wx" property="wx" />
+        <result column="sina" property="sina" />
+        <result column="aisle" property="aisle" />
+        <result column="othernicks" property="othernicks" />
+        <result column="otheravatar" property="otheravatar" />
+        <result column="country" property="country" />
+        <result column="soldier" property="soldier" />
+        <result column="passport" property="passport" />
+        <result column="msn" property="msn" />
+        <result column="freeze" property="freeze" />
+        <result column="avatarbig" property="avatarbig" />
+        <result column="avatar" property="avatar" />
+        <result column="avatarlittle" property="avatarlittle" />
+        <result column="original" property="original" />
+        <result column="summary" property="summary" />
+        <result column="job" property="job" />
+        <result column="department" property="department" />
+        <result column="company" property="company" />
+        <result column="domain" property="domain" />
+        <result column="honor" property="honor" />
+        <result column="education" property="education" />
+        <result column="work" property="work" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+        <result column="oid" property="oid" />
+        <result column="status" property="status" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, name, nickname, showname, idtype, identityid, gender, birthday, college, address, qq, wx, sina, aisle, othernicks, otheravatar, country, soldier, passport, msn, freeze, avatarbig, avatar, avatarlittle, original, summary, job, department, company, domain, honor, education, work, createtime, updatetime, oid, status
+    </sql>
+
+</mapper>

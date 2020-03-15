@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCOrdersDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCOrdersDO">
+        <id column="id" property="id"/>
+        <result column="oid" property="oid"/>
+        <result column="useruid" property="useruid"/>
+        <result column="name" property="name"/>
+        <result column="authcode" property="authcode"/>
+        <result column="commodityid" property="commodityid"/>
+        <result column="address" property="address"/>
+        <result column="isused" property="isused"/>
+        <result column="amount" property="amount"/>
+        <result column="site" property="site"/>
+        <result column="type" property="type"/>
+        <result column="needinvoice" property="needinvoice"/>
+        <result column="invoicestatus" property="invoicestatus"/>
+        <result column="orderstatus" property="orderstatus"/>
+        <result column="refundtime" property="refundtime"/>
+        <result column="reviewstatus" property="reviewstatus"/>
+        <result column="status" property="status"/>
+        <result column="data" property="data"/>
+        <result column="createtime" property="createtime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+    <resultMap id="VCOrderinfo" type="com.supergenius.admin.capital.model.vo.VCOrderinfoVO">
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+        <result column="oid"></result>
+
+    </resultMap>
+    <update id="invoice">
+        UPDATE orders SET invoicestatus=1 WHERE orders.`oid` in
+        <foreach item="item" collection="oids" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+    </update>
+    <update id="returnOrder">
+        UPDATE orders SET orderstatus=6,refundtime=NOW() WHERE oid in
+        <foreach item="item" collection="oids" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+    </update>
+    <select id="selectMemberOrderDisplayDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCMemberOrderDisplayVO">
+        SELECT o.oid,o.ordercode,u.corporation,o.amount,o.createtime,o.site,o.STATUS,o.needinvoice,o.invoicestatus FROM
+        orders AS o
+        INNER JOIN USER AS u ON o.useruid=u.useruid
+        LEFT JOIN invoice AS i ON o.oid=i.oid
+        <trim prefix="where" suffixOverrides="and">
+            o.type=0 and
+            <if test="map.ordercode != null and map.ordercode !=''">o.ordercode=#{map.ordercode} and</if>
+            <if test="map.begintime != null and map.begintime !=''">o.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null and map.endtime !=''">o.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.site!= null">o.`site`=#{map.site} and</if>
+            <if test="map.orderstatus != null ">o.`orderstatus`=#{map.orderstatus} and</if>
+            <if test="map.needinvoice != null">o.`needinvoice`=#{map.needinvoice} and</if>
+            <if test="map.invoicestatus != null ">o.`invoicestatus`=#{map.invoicestatus} and
+            </if>
+            <if test="map.type != null ">i.`type`=#{map.type} and</if>
+        </trim>
+        <if test="map.order != null ">ORDER BY createtime ${map.order}</if>
+
+    </select>
+    <select id="selectOrderInfo" resultType="com.supergenius.admin.capital.model.vo.VCOrderinfoVO">
+      SELECT
+  o.oid,
+  o.ordercode,
+  u.corporation,
+  o.amount,
+  o.createtime,
+  o.site,
+  o.needinvoice,
+  o.invoicestatus,
+  i.applytime,
+  i.invoicetime,
+  i.type,
+  i.head,
+  i.content,
+  i.company,
+  i.taxnumber,
+  i.mobile,
+  i.email,
+  i.addressee,
+  i.address,
+  i.taxnumber,
+  o.orderstatus,
+  o.reviewstatus
+FROM
+  orders AS o
+  INNER JOIN USER AS u
+    ON o.useruid = u.useruid
+  LEFT JOIN invoice AS i
+    ON o.oid = i.oid
+WHERE  o.oid=#{oid}
+    </select>
+    <select id="selectVCGuaranteeDisplayDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCGuaranteeAndRecommendDisplayVO">
+        SELECT
+        o.oid,
+        o.ordercode,
+        u.corporation,
+        o.amount,
+        o.createtime,
+        o.site,
+        o.STATUS,
+        o.needinvoice,
+        o.invoicestatus,
+        o.reviewstatus,
+        o.orderstatus
+        FROM
+        orders AS o
+        INNER JOIN USER AS u
+        ON o.useruid = u.useruid
+        LEFT JOIN invoice AS i
+        ON o.oid = i.oid
+        <trim prefix="where" suffixOverrides="and">
+            o.type=5 and
+            <if test="map.ordercode != null and map.ordercode !=''">o.ordercode=#{map.ordercode} and</if>
+            <if test="map.begintime != null and map.begintime !=''">o.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null and map.endtime !=''">o.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.site != null ">o.`site`=#{map.site} and</if>
+            <if test="map.corporation != null and map.corporation !='' ">u.`corporation`=#{map.corporation} and</if>
+            <if test="map.reviewstatus != null ">o.`reviewstatus`=#{map.reviewstatus} and</if>
+            <if test="map.orderstatus != null">o.`orderstatus`=#{map.orderstatus} and</if>
+            <if test="map.needinvoice != null ">o.`needinvoice`=#{map.needinvoice} and</if>
+            <if test="map.invoicestatus != null">o.`invoicestatus`=#{map.invoicestatus} and
+            </if>
+            <if test="map.type != null">i.`type`=#{map.type} and</if>
+        </trim>
+        <if test="map.order != null">ORDER BY createtime ${map.order}</if>
+    </select>
+    <select id="selectVCrecommendDisplayDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCGuaranteeAndRecommendDisplayVO">
+        SELECT
+        o.oid,
+        o.ordercode,
+        u.corporation,
+        o.amount,
+        o.createtime,
+        o.site,
+        o.STATUS,
+        o.needinvoice,
+        o.invoicestatus,
+        o.reviewstatus,
+        o.orderstatus
+        FROM
+        orders AS o
+        INNER JOIN USER AS u
+        ON o.useruid = u.useruid
+        LEFT JOIN invoice AS i
+        ON o.oid = i.oid
+        <trim prefix="where" suffixOverrides="and">
+            o.type=6 and
+            <if test="map.ordercode != null">o.ordercode=#{map.ordercode} and</if>
+            <if test="map.begintime != null">o.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null">o.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.site != null">o.`site`=#{map.site} and</if>
+            <if test="map.corporation != null ">u.`corporation`=#{map.corporation} and</if>
+            <if test="map.reviewstatus != null">o.`reviewstatus`=#{map.reviewstatus} and</if>
+            <if test="map.orderstatus != null ">o.`orderstatus`=#{map.orderstatus} and</if>
+            <if test="map.needinvoice != null ">o.`needinvoice`=#{map.needinvoice} and</if>
+            <if test="map.invoicestatus != null ">o.`invoicestatus`=#{map.invoicestatus} and
+            </if>
+            <if test="map.type != null">i.`type`=#{map.type} and</if>
+        </trim>
+        <if test="map.order != null and map.order !=''">ORDER BY createtime ${map.order}</if>
+    </select>
+
+    <select id="selectVCMeetingOrderDisplayDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCMeetingOrderDisplayVO">
+        SELECT
+        o.`oid`,
+        o.ordercode,
+        u.`corporation`,
+        m.`name`,
+        s.`starttime`,
+        s.`overtime`,
+        o.`amount`,
+        o.`createtime`,
+        o.`site`,
+        o.`needinvoice`,
+        o.`invoicestatus`,
+        s.`sn`,
+        o.`orderstatus`
+        FROM
+        orders AS o
+        INNER JOIN subscribe AS s
+        ON s.sn = o.`commodityid`
+        INNER JOIN USER AS u
+        ON u.`useruid` = o.`useruid`
+        INNER JOIN meeting AS m
+        ON m.`uid` = s.`meetingid`
+        LEFT JOIN invoice AS i
+        ON i.`oid` = o.`oid`
+        <trim prefix="where" suffixOverrides="and">
+            <if test="map.ordercode != null">o.ordercode=#{map.ordercode} and</if>
+            <if test="map.corporation != null">u.`corporation` like
+                CONCAT('%',#{map.corporation},'%') and
+            </if>
+            <if test="map.name != null ">m.`name` like CONCAT('%',#{map.name},'%') and</if>
+            <if test="map.starttime!=null ">s.`starttime` &gt; #{map.starttime}</if>
+            <if test="map.endtime!=null ">s.`endtime` &lt;; #{map.endtime}</if>
+            <if test="map.begintime != null ">o.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.overtime != null ">o.`createtime` &lt; #{map.overtime} and</if>
+            <if test="map.orderstatus != null ">o.`orderstatus`=#{map.orderstatus} and</if>
+            <if test="map.needinvoice != null">o.`needinvoice`=#{map.needinvoice} and</if>
+            <if test="map.invoicestatus != null">o.`invoicestatus`=#{map.invoicestatus} and
+            </if>
+            <if test="map.type != null ">i.`type`=#{map.type} and</if>
+        </trim>
+        <if test="map.order != null ">ORDER BY createtime ${map.order}</if>
+    </select>
+    <select id="selectVCMeetingOrderInfoDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCMeetingOrderInfoVO">
+SELECT
+  o.`oid`,
+    o.ordercode,
+  u.`corporation`,
+  m.`name`,
+  s.`starttime`,
+  s.`overtime`,
+  o.`amount`,
+  o.`createtime`,
+  o.`site`,
+  o.orderstatus,
+  m.`name`,
+  s.`sn`,
+  o.`needinvoice`,
+  o.`invoicestatus`,
+  i.applytime,
+  i.invoicetime,
+  i.`type`,
+  i.`head`,
+  i.content,
+  i.`company`,
+  i.`taxnumber`,
+  i.mobile,
+  i.`email`,
+  i.`addressee`,
+  i.`address`
+FROM
+  orders AS o
+  INNER JOIN subscribe AS s
+    ON s.sn = o.`commodityid`
+  INNER JOIN USER AS u
+    ON u.`useruid` = o.`useruid`
+  INNER JOIN meeting AS m
+    ON m.`uid` = s.`meetingid`
+  LEFT JOIN invoice AS i
+    ON i.`oid` = o.`oid`
+WHERE o.`oid` = #{oid}
+    </select>
+    <select id="getVCInvoicePrintDO" resultType="com.supergenius.admin.capital.model.vo.VCInvoicePrintVO">
+        SELECT
+        @rank_8 := @rank_8 + 1 AS number,
+        o.`ordercode`,
+        o.ordercode,
+        i.`mobile`,
+        o.`createtime`,
+        o.`amount`,
+        i.`invoicetime`,
+        u.phone AS userMobile,
+        i.`head`,
+        i.`type`,
+        i.`content`,
+        i.`company`,
+        i.`taxnumber`,
+        i.`email`,
+        i.`addressee`,
+        i.`address`
+        FROM
+        (SELECT @rank_8 := 0) b,
+        gventurecapitaldb.orders AS o
+        LEFT JOIN
+        gventurecapitaldb.invoice AS i
+        ON o.`oid` = i.`oid`
+        LEFT JOIN
+        `guserdb2`.`user` AS u
+        ON o.useruid = u.uid
+        where o.`oid` in
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+
+    </select>
+    <select id="selectVCTrainactivityOrderDisplayDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCTrainactivityDisplayVO">
+
+
+        SELECT
+        o.`oid`,
+        o.`ordercode`,
+        u.`corporation`,
+        t.`name`,
+        o.`amount`,
+        o.`createtime`,
+        o.`site`,
+        o.`needinvoice`,
+        o.`invoicestatus`,
+        t.`signcode`,
+        o.`reviewstatus`,
+        o.`orderstatus`
+        FROM
+        orders AS o
+        INNER JOIN trainactivity AS t
+        ON o.`commodityid` = t.uid
+        INNER JOIN USER AS u
+        ON o.useruid = u.useruid
+        LEFT JOIN invoice AS i
+        ON o.oid = i.oid
+        <trim prefix="where" suffixOverrides="and">
+
+            <if test="map.trainactivitytype != null ">t.type=#{map.trainactivitytype}
+                and
+            </if>
+            <if test="map.ordercode != null ">o.ordercode=#{map.ordercode} and</if>
+            <if test="map.signcode != null">t.signcode=#{map.signcode} and</if>
+            <if test="map.corporation != null">u.`corporation` like
+                CONCAT('%',#{map.corporation},'%') and
+            </if>
+            <if test="map.trainactivityname != null ">t.`name` like
+                CONCAT('%',#{map.trainactivityname},'%') and
+            </if>
+            <if test="map.site != null ">o.`site`=#{map.site} and</if>
+            <if test="map.begintime != null ">o.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null ">o.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.reviewstatus != null ">o.`reviewstatus`=#{map.reviewstatus} and</if>
+            <if test="map.orderstatus != null">o.`orderstatus`=#{map.orderstatus} and</if>
+            <if test="map.needinvoice != null ">o.`needinvoice`=#{map.needinvoice} and</if>
+            <if test="map.invoicestatus != null ">o.`invoicestatus`=#{map.invoicestatus} and
+            </if>
+            <if test="map.type != null">i.`type`=#{map.type} and</if>
+        </trim>
+        <if test="map.order != null and map.order !=''">ORDER BY createtime ${map.order}</if>
+
+    </select>
+    <select id="selecTrainactivityOrderInfo"
+            resultType="com.supergenius.admin.capital.model.vo.VCTrainactivityDisplayVO">
+        SELECT
+  o.oid,
+  o.ordercode,
+  u.corporation,
+  o.amount,
+  o.createtime,
+  o.site,
+  t.`name`,
+  t.`signcode`,
+  o.`reviewstatus`,
+  o.orderstatus,
+  o.needinvoice,
+  o.invoicestatus,
+  i.applytime,
+  i.invoicetime,
+  i.type,
+  i.head,
+  i.content,
+  i.company,
+  i.taxnumber,
+  i.mobile,
+  i.email,
+  i.addressee,
+  i.address,
+  i.taxnumber,
+  o.orderstatus,
+  o.reviewstatus
+FROM
+  orders AS o
+  INNER JOIN trainactivity AS t
+    ON o.`commodityid` = t.uid
+  INNER JOIN USER AS u
+    ON o.useruid = u.useruid
+  LEFT JOIN invoice AS i
+    ON o.oid = i.oid
+WHERE o.oid =#{oid}
+    </select>
+    <select id="selectVCVideoVOOrderDisplayDO" resultType="com.supergenius.admin.capital.model.vo.VCVideoVO">
+        SELECT
+        o.`oid`,
+        o.`ordercode`,
+        p.`name`,
+        o.`amount`,
+        o.`createtime`,
+        o.`site`,
+        o.`orderstatus`,
+        o.`needinvoice`,
+        o.`invoicestatus`,
+        o.`isused`
+        FROM
+        orders AS o
+        INNER JOIN video AS v
+        ON o.`commodityid` = v.`pid`
+        LEFT JOIN USER AS u
+        ON u.`useruid` = o.`useruid`
+        LEFT JOIN `projectinfo` AS PI
+        ON v.`pid` = pi.`videouid`
+        LEFT JOIN `project` AS p
+        ON pi.`pid` = p.`pid`
+        <trim prefix="where" suffixOverrides="and">
+            <if test="map.ordercode != nul">o.ordercode=#{map.ordercode} and</if>
+            <if test="map.corporation != null ">u.`corporation` like
+                CONCAT('%',#{map.corporation},'%') and
+            </if>
+            <if test="map.begintime != null ">o.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null ">o.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.orderstatus != null ">o.`orderstatus`=#{map.orderstatus} and</if>
+            <if test="map.site != null and ">o.`site`=#{map.site} and</if>
+            <if test="map.isused != null">o.`isused`=#{map.isused} and</if>
+            <if test="map.needinvoice != null ">o.`needinvoice`=#{map.needinvoice} and</if>
+            <if test="map.invoicestatus != null ">o.`invoicestatus`=#{map.invoicestatus} and
+            </if>
+            <if test="map.type != null ">i.`type`=#{map.type} and</if>
+        </trim>
+        <if test="map.order != null ">ORDER BY createtime ${map.order}</if>
+    </select>
+    <select id="selectVideoOrderInfo" resultType="com.supergenius.admin.capital.model.vo.VCVideoOrderInfoVO">
+SELECT
+  o.`oid`,
+  o.`ordercode`,
+  p.`name`,
+  o.`amount`,
+  o.`createtime`,
+  o.`site`,
+  o.`isused`,
+  p.`name`,
+  o.needinvoice,
+  o.invoicestatus,
+  i.applytime,
+  i.invoicetime,
+  i.type,
+  i.head,
+  i.content,
+  i.company,
+  i.taxnumber,
+  i.mobile,
+  i.email,
+  i.addressee,
+  i.address,
+  i.taxnumber,
+  o.orderstatus,
+  o.reviewstatus
+FROM
+  orders AS o
+  INNER JOIN video AS v
+    ON o.`commodityid` = v.`pid`
+  LEFT JOIN USER AS u
+    ON u.`useruid` = o.`useruid`
+  LEFT JOIN `projectinfo` AS PI
+    ON v.`pid` = pi.`videouid`
+  LEFT JOIN `project` AS p
+    ON pi.`pid` = p.`pid`
+  LEFT JOIN invoice AS i
+    ON o.oid = i.oid
+    WHERE o.oid=#{oid}
+    </select>
+
+
+</mapper>

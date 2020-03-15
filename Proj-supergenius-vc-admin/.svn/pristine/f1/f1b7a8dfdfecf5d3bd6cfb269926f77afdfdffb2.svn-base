@@ -1,0 +1,65 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.*;
+import com.supergenius.admin.capital.mapper.VCOrdersDao;
+import com.supergenius.admin.capital.service.IVCOrdersService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.swagger.models.auth.In;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCOrdersServiceImpl extends ServiceImpl<VCOrdersDao, VCOrdersDO> implements IVCOrdersService {
+    @Autowired
+    VCOrdersDao vcOrdersDao;
+
+    @Override
+    public IPage<VCMemberOrderDisplayDO> selectMemberOrderDisplayDO(Page page, Map<String, Object> map) {
+        return vcOrdersDao.selectMemberOrderDisplayDO(page,map);
+    }
+
+    @Override
+    public VCOrderinfo selectOrderInfo(String oid) {
+        return vcOrdersDao.selectOrderInfo(oid);
+    }
+
+    @Override
+    public Integer invoiceed(List<String> oids) {
+        Integer invoice = vcOrdersDao.invoice(oids);
+        return invoice;
+    }
+
+    @Override
+    public List<VCInvoicePrintDO> getVCInvoicePrintDO(List<String> list) {
+        List<VCInvoicePrintDO> vcInvoicePrintDO = vcOrdersDao.getVCInvoicePrintDO(list);
+        return  vcInvoicePrintDO;
+    }
+
+    @Override
+    public IPage<VCGuaranteeAndRecommendDisplayDO> selectVCGuaranteeDisplayDO(Page page, Map<String, Object> map) {
+        return vcOrdersDao.selectVCGuaranteeDisplayDO(page,map);
+    }
+
+    @Override
+    public IPage<VCGuaranteeAndRecommendDisplayDO> selectVCrecommendDisplayDO(Page page, Map<String, Object> map) {
+        return vcOrdersDao.selectVCrecommendDisplayDO(page,map);
+    }
+
+    @Override
+    public int returnOrder(List<String> oids) {
+        return vcOrdersDao.returnOrder(oids);
+    }
+}

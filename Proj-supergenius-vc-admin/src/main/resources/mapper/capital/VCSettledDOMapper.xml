@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCSettledDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCSettledDO">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="incubatoruid" property="incubatoruid" />
+        <result column="useruid" property="useruid" />
+        <result column="field" property="field" />
+        <result column="peoplenumber" property="peoplenumber" />
+        <result column="amount" property="amount" />
+        <result column="currencytype" property="currencytype" />
+        <result column="time" property="time" />
+        <result column="area" property="area" />
+        <result column="worknumber" property="worknumber" />
+        <result column="mobile" property="mobile" />
+        <result column="email" property="email" />
+        <result column="settledtime" property="settledtime" />
+        <result column="type" property="type" />
+        <result column="adminuid" property="adminuid" />
+        <result column="adminname" property="adminname" />
+        <result column="reviewtime" property="reviewtime" />
+        <result column="situation" property="situation" />
+        <result column="remark" property="remark" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, incubatoruid, useruid, field, peoplenumber, amount, currencytype, time, area, worknumber, mobile, email, settledtime, type, adminuid, adminname, reviewtime, situation, remark, status, data, createtime, updatetime
+    </sql>
+    <select id="getSettledDisplay" resultType="com.supergenius.admin.capital.model.vo.VCSettledDisplayVO">
+        SELECT
+   u.`showname`,i.`name`,s.`createtime`,s.reviewtime,s.status,s.`uid`
+FROM
+  settled AS s
+  LEFT JOIN `guserdb2`.`userinfo` AS u
+    ON useruid = u.`uid`
+  INNER JOIN `incubator` AS i
+    ON s.`incubatoruid` = i.`uid`
+    <trim prefix="where" suffixOverrides="and">
+        <if test="map.cname!=null and map.cname!=''">
+            u.`showname` like CONCAT('%',#{map.cname},'%') and
+        </if>
+        <if test="map.iuid!=null and map.iuid!=''">
+            i.uid=#{map.iuid} and
+        </if>
+        <if test="map.field!=''and map.field!=null">
+            s.field=#{map.field} and
+        </if>
+        <if test="map.statue!=null">
+            s.status=#{map.statue} and
+        </if>
+        <if test="map.applystarttime!=null and map.applystarttime!=''">
+            s.createtime  &gt; #{map.applystarttime} and
+        </if>
+        <if test="map.applyendtime!=null and map.applyendtime!=''">
+            s.createtime &lt; #{map.applyendtime} and
+        </if>
+        <if test="map.reviewstarttime!=null and map.reviewstarttime!=''">
+            s.reviewtime &gt; #{map.reviewstarttime} and
+        </if>
+        <if test="map.reviewendtime!=null and map.reviewendtime!=''">
+            s.reviewtime &lt; #{map.reviewendtime} and
+        </if>
+        <if test="map.situation!=null and map.situation!=''">
+            s.`situation` like CONCAT('%',#{map.situation},'%') and
+        </if>
+        <if test="map.remark!=null and map.remark!=''">
+            s.`remark` like CONCAT('%',#{map.remark},'%') and
+        </if>
+    </trim>
+    </select>
+    <select id="getSettledById" resultType="com.supergenius.admin.capital.model.vo.VCSettledInfoVO">
+        SELECT
+  u.`showname`,
+  i.`name`,
+  s.`createtime`,
+  s.`field`,
+  s.peoplenumber,
+  s.amount,
+  s.time,
+  s.area,
+  s.worknumber,
+  s.mobile,
+  s.`email`,
+  s.`status`,
+  s.`situation`,
+  s.`remark` ,
+  s.`reviewtime`
+FROM
+  settled AS s
+  LEFT JOIN `guserdb2`.`userinfo` AS u
+    ON useruid = u.`uid`
+  INNER JOIN `incubator` AS i
+    ON s.`incubatoruid` = i.`uid`
+WHERE s.uid = #{uid}
+    </select>
+
+</mapper>

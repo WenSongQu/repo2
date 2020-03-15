@@ -1,0 +1,35 @@
+package com.supergenius.admin.convert;
+
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.databind.util.Converter;
+import com.supergenius.admin.enums.EOrder;
+
+/**
+ * @author : zuoyu
+ * @project : proj-supergenius-vc-admin
+ * @description : 订单状态转换
+ * @date : 2019-12-27 16:49
+ **/
+public class OrderStatusConverter implements Converter<EOrder, String> {
+    @Override
+    public String convert(EOrder eOrder) {
+        if (eOrder.getValue() == 0){
+            return "待付款";
+        }
+        if (eOrder.getValue() == 1){
+            return "已完成";
+        }
+        return "未知";
+    }
+
+    @Override
+    public JavaType getInputType(TypeFactory typeFactory) {
+        return null;
+    }
+
+    @Override
+    public JavaType getOutputType(TypeFactory typeFactory) {
+        return null;
+    }
+}

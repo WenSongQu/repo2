@@ -1,0 +1,16 @@
+package com.supergenius.admin.convert;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.supergenius.admin.enums.EOrder;
+
+import java.io.IOException;
+
+public class EOrderJsonDeserializer  extends JsonDeserializer<EOrder> {
+    @Override
+    public EOrder deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+        return null;
+    }
+}

@@ -1,0 +1,29 @@
+package com.supergenius.admin.capital.service;
+
+import com.supergenius.admin.capital.model.VCRecordDO;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
+
+/**
+ * <p>
+ * 服务类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+public interface IVCRecordService extends IService<VCRecordDO> {
+    //保推记录
+    List<VCRecordDO> getGnvestmentRecord(String useruid,Integer pageNum);
+
+    //召集记录
+    List<VCRecordDO> getConveneRecord(String useruid,Integer pageNum);
+
+    //投资记录
+    List<VCRecordDO> getInvestmentRecord(String useruid,Integer pageNum);
+
+    //推荐记录
+    List<VCRecordDO> getEcomrmendedRecord(String useruid,Integer pageNum);
+
+}

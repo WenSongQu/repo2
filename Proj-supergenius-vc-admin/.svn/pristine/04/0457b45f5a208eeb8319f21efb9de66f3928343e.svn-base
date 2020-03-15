@@ -1,0 +1,20 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.supergenius.admin.capital.model.VCIncubatorDO;
+import com.supergenius.admin.capital.mapper.VCIncubatorDao;
+import com.supergenius.admin.capital.service.IVCIncubatorService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCIncubatorServiceImpl extends ServiceImpl<VCIncubatorDao, VCIncubatorDO> implements IVCIncubatorService {
+
+}

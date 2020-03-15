@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCProjectDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCProjectDO">
+        <id column="id" property="id"/>
+        <result column="pid" property="pid"/>
+        <result column="useruid" property="useruid"/>
+        <result column="projectcode" property="projectcode"/>
+        <result column="name" property="name"/>
+        <result column="avatarbig" property="avatarbig"/>
+        <result column="avatarmedium" property="avatarmedium"/>
+        <result column="avatarlittle" property="avatarlittle"/>
+        <result column="original" property="original"/>
+        <result column="field" property="field"/>
+        <result column="area" property="area"/>
+        <result column="display" property="display"/>
+        <result column="company" property="company"/>
+        <result column="summary" property="summary"/>
+        <result column="slogan" property="slogan"/>
+        <result column="stage" property="stage"/>
+        <result column="overview" property="overview"/>
+        <result column="analysis" property="analysis"/>
+        <result column="profit" property="profit"/>
+        <result column="prospect" property="prospect"/>
+        <result column="projectdisplay" property="projectdisplay"/>
+        <result column="sharestock" property="sharestock"/>
+        <result column="estimate" property="estimate"/>
+        <result column="projecttype" property="projecttype"/>
+        <result column="resalestatus" property="resalestatus"/>
+        <result column="reportcount" property="reportcount"/>
+        <result column="followcount" property="followcount"/>
+        <result column="freezecount" property="freezecount"/>
+        <result column="finacingstatus" property="finacingstatus"/>
+        <result column="status" property="status"/>
+        <result column="data" property="data"/>
+        <result column="createtime" property="createtime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+    <resultMap id="Baseshowinfo" type="com.supergenius.admin.capital.model.VShowinfoDO">
+        <result column="pid" property="pid"></result>
+        <result column="name" property="pname"></result>
+        <result column="corporation" property="cname"/>
+        <result column="createtime" property="createTime"></result>
+        <result column="area" property="area"/>
+        <result column="sharestock" property="sharestock"></result>
+        <result column="followcount" property="followcount"></result>
+        <result column="freezecount" property="freezecount"></result>
+        <result column="status" property="status"></result>
+
+    </resultMap>
+    <resultMap id="VCRelaseProjectInfoDO" type="com.supergenius.admin.capital.model.VCRelaseProjectInfoDO">
+        <result column="pid" property="pid"></result>
+        <result column="name" property="pname"></result>
+        <result column="corporation" property="cname"/>
+        <result column="createtime" property="createTime"></result>
+        <result column="area" property="area"/>
+        <result column="videobuy" property="videobuy"></result>
+        <result column="followcount" property="followcount"></result>
+        <result column="freezecount" property="freezecount"></result>
+        <result column="status" property="status"></result>
+
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pid, useruid, projectcode, name, avatarbig, avatarmedium, avatarlittle, original, field, area, display, company, summary, slogan, stage, overview, analysis, profit, prospect, projectdisplay, sharestock, estimate, projecttype, resalestatus, reportcount, followcount, freezecount, finacingstatus, status, data, createtime, updatetime
+    </sql>
+    <update id="freezeProject">
+      UPDATE USER u, project p SET u.freezecount=u.freezecount+1, p.STATUS=3 ,p.freezecount=p.freezecount+1 WHERE u.useruid=p.useruid AND  p.pid in
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+    </update>
+    <update id="unFreezeProject">
+        UPDATE project SET STATUS=1
+        WHERE  pid in
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+                  #{item}
+                </foreach>
+    </update>
+    <select id="selectStartUpProjectPageVo" resultMap="Baseshowinfo">
+        SELECT DISTINCT
+        p.`pid`,
+        p.`name`,
+        u.`corporation`,
+        p.`createtime`,
+        p.`area`,
+        pi.`videobuy`,
+        p.`followcount`,
+        p.`freezecount`,
+        p.`status`
+        FROM
+        project AS p
+        INNER JOIN USER AS u ON p.`useruid` = u.`useruid`
+        INNER JOIN projectinfo AS pi ON p.pid = pi.pid
+        INNER JOIN financing AS fc ON fc.`pid`=p.`pid`
+        <trim prefix="where" prefixOverrides="and" suffixOverrides="and">
+            p.`projecttype`=1 and
+            <if test="map.name != null and map.name !=''">name like CONCAT('%',#{map.name},'%') and</if>
+            <if test="map.corporation != null and map.corporation !=''">corporation like
+                CONCAT('%',#{map.corporation},'%') and
+            </if>
+            <if test="map.begintime != null and map.begintime !=''">p.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null and map.endtime !=''">p.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.area != null and map.area !=''">p.`area`=#{map.area} <if
+                    test="map.city != null and map.city !=''">#{map.city}</if>and
+            </if>
+            <if test="map.finacingstatus != null and map.finacingstatus !=''">p.`finacingstatus`= #{map.finacingstatus}
+                and
+            </if>
+            <if test="map.minfreezecount != null and map.minfreezecount !=''">p.`freezecount` &gt; #{map.minfreezecount}
+                and
+            </if>
+            <if test="map.maxfreezecount != null and map.maxfreezecount !=''">p.`freezecount` &lt; #{map.maxfreezecount}
+                and
+            </if>
+            <if test="map.videobuy != null and map.videobuy !=''">p.`videobuy` =#{map.videobuy} and</if>
+            <if test="map.rounds != null and map.rounds !=''">pi.`rounds` =#{map.rounds} and</if>
+            <if test="map.platform != null and map.platform !=''">fc.`platform` =#{map.platform} and</if>
+            <if test="map.minfollowcount != null and map.minfollowcount !=''">p.`followcount` &gt; #{map.minfollowcount}
+                and
+            </if>
+            <if test="map.maxfollowcount != null and map.maxfollowcount !=''">p.`followcount` &lt; #{map.maxfollowcount}
+                and
+            </if>
+
+        </trim>
+
+
+    </select>
+    <select id="selectVCRelaseProjectInoPage" resultMap="VCRelaseProjectInfoDO">
+        SELECT
+        p.`pid`,
+        p.`name`,
+        u.`corporation`,
+        p.`createtime`,
+        p.`area`,
+        p.`sharestock`,
+        p.`followcount`,
+        p.`freezecount`,
+        p.`status`
+        FROM
+        project AS p
+        INNER JOIN USER AS u ON p.`useruid` = u.`useruid`
+        INNER JOIN projectinfo AS PI ON p.pid = pi.pid
+        <trim prefix="where" prefixOverrides="and" suffixOverrides="and">
+            projecttype=0 and
+            <if test="map.name != null and map.name !=''">name like CONCAT('%',#{map.name},'%') and</if>
+            <if test="map.corporation != null and map.corporation !=''">corporation like
+                CONCAT('%',#{map.corporation},'%') and
+            </if>
+            <if test="map.begintime != null and map.begintime !=''">p.`createtime` &gt; #{map.begintime} and</if>
+            <if test="map.endtime != null and map.endtime !=''">p.`createtime` &lt; #{map.endtime} and</if>
+            <if test="map.area != null and map.area !=''">p.`area`=#{map.area} <if
+                    test="map.city != null and map.city !=''">#{map.city}</if>and
+            </if>
+            <if test="map.resalestatus != null and map.resalestatus !=''">p.`resalestatus`= #{map.resalestatus}
+                and
+            </if>
+            <if test="map.minfreezecount != null and map.minfreezecount !=''">p.`freezecount` &gt; #{map.minfreezecount}
+                and
+            </if>
+            <if test="map.maxfreezecount != null and map.maxfreezecount !=''">p.`freezecount` &lt; #{map.maxfreezecount}
+                and
+            </if>
+            <if test="map.minsharestock != null and map.minsharestock !=''">p.`sharestock` &gt; #{map.minsharestock}
+                and
+            </if>
+            <if test="map.maxsharestock != null and map.maxsharestock !=''">p.`sharestock` &lt; #{map.maxsharestock}
+                and
+            </if>
+            <if test="map.rounds != null and map.rounds !=''">pi.`rounds` =#{map.rounds} and</if>
+            <if test="map.minfollowcount != null and map.minfollowcount !=''">p.`followcount` &gt; #{map.minfollowcount}
+                and
+            </if>
+            <if test="map.maxfollowcount != null and map.maxfollowcount !=''">p.`followcount` &lt; #{map.maxfollowcount}
+                and
+            </if>
+        </trim>
+    </select>
+
+
+</mapper>

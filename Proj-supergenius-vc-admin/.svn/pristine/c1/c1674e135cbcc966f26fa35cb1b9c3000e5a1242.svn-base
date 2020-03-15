@@ -1,0 +1,140 @@
+package com.supergenius.admin.capital.controller;
+
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.vo.*;
+import com.supergenius.admin.capital.service.IVCUserService;
+import com.supergenius.admin.utils.ErrorCode;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.*;
+
+@Api(description = "创业者信息")
+@Slf4j
+@RequestMapping("/entrepreneurmember")
+@RestController
+public class EntrepreneurMemberController {
+    @Autowired
+    IVCUserService ivcUserService;
+
+    @ApiOperation("获取创业者信息列表")
+    @GetMapping("/list/{pageNum}")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNum", value = "页数", required = true, paramType = "path", dataType = "int"),
+            @ApiImplicitParam(name = "filtrate", value = "过滤条件", paramType = "query", dataType = "String")
+    })
+    public R<IPage<VCEntrepreneurmemberDisplayVO>> getselectVEntrepreneurMemberDisplayDO(@RequestParam(name = "filtrate", required = false) String filtrateStr, @PathVariable int pageNum) {
+        log.info(filtrateStr + "--------------");
+        VCFiltrateUserVO vcFiltrateUserVO = JSON.parseObject(filtrateStr, VCFiltrateUserVO.class);
+        log.info(vcFiltrateUserVO + "--------------");
+        IPage<VCEntrepreneurmemberDisplayVO> vcEntrepreneurmemberDisplayVOIPage = ivcUserService.selectMemberOrderDisplayDO(new Page(pageNum, 10), vcFiltrateUserVO);
+        if (vcEntrepreneurmemberDisplayVOIPage.getRecords().size() > 0) {
+            return R.ok(vcEntrepreneurmemberDisplayVOIPage).setCode(200);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+    @ApiOperation("冻结账户和相对应的项目")
+    @ApiImplicitParam(name = "useruids", value = "用户uid", dataType = "String", allowMultiple = true, paramType = "query")
+    @PostMapping("/freezeUser")
+    @Transactional
+    public R<Boolean> freezeUser(@RequestParam("useruids") String... useruids) {
+        Arrays.asList(useruids).forEach(System.out::println);
+        try {
+            ivcUserService.freezeUser(Arrays.asList(useruids));
+            return R.ok(true).setCode(200);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.failed("failed");
+        }
+
+
+    }
+
+    @ApiOperation("解冻账户")
+    @ApiImplicitParam(name = "useruids", value = "用户uid", dataType = "String", allowMultiple = true, paramType = "query")
+    @PostMapping("/unFreezeUser")
+    @Transactional
+    public R<Boolean> unFreezeUser(@RequestParam("useruids") String[]  useruids) {
+        try {
+            ivcUserService.unFreezeUser(Arrays.asList(useruids));
+            return R.ok(true).setCode(200);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return R.failed("failed");
+        }
+    }
+
+    @ApiOperation("查看个人用户信息")
+    @ApiImplicitParam(name = "uid", value = "用户uid", dataType = "String",  paramType = "path")
+    @GetMapping("/getuserinfo/{uid}")
+    public R<VCEnterpreneurmemberBasePersonVO> getuserinfo(@PathVariable("uid") String uid) {
+
+        VCEnterpreneurmemberBasePersonVO vcEnterpreneurmemberBasePersonVOById = ivcUserService.getVCEnterpreneurmemberBaseInfoVOById(uid);
+        if(vcEnterpreneurmemberBasePersonVOById==null){
+            return R.failed(new ErrorCode(401));
+        }
+        return R.ok(vcEnterpreneurmemberBasePersonVOById).setCode(200);
+
+
+
+    }
+    @ApiOperation("查看公司用户信息")
+    @ApiImplicitParam(name = "uid", value = "用户uid", dataType = "String",  paramType = "path")
+    @GetMapping("/getcompanyinfo/{uid}")
+    public R<VCEnterpreneurmemberBaseCompanyVO> getCompanyinfo(@PathVariable("uid") String uid) {
+
+        VCEnterpreneurmemberBaseCompanyVO baseInfo = ivcUserService.getVCEnterpreneurmemberBaseCompanyVOById(uid);
+        if(baseInfo==null){
+            return R.failed(new ErrorCode(401));
+        }
+        return R.ok(baseInfo).setCode(200);
+
+    }
+
+    @ApiOperation("更多融资记录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "uid", value = "用户uid", dataType = "String",  paramType = "path"),
+            @ApiImplicitParam(name = "pageNum", value = "页数", dataType = "Int",  paramType = "path")
+    })
+    @GetMapping("/morefinancings/{uid}/{pageNum}")
+    public R<List<VCEnterpreneurmemberFinancingVO>> moreFinancings(@PathVariable String uid,@PathVariable int pageNum){
+        List<VCEnterpreneurmemberFinancingVO> list = ivcUserService.getVCEnterpreneurmemberFinancingInfoVOById(uid, pageNum-1);
+        if(list.size()==10){
+            return R.ok(list).setCode(200);
+        }
+        if(list.size()>0){
+            return R.ok(list).setCode(201);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+    @ApiOperation("更多订单记录")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "uid", value = "用户uid", dataType = "String",  paramType = "path"),
+            @ApiImplicitParam(name = "pageNum", value = "页数", dataType = "Int",  paramType = "path")
+    })
+    @GetMapping("/moreorder/{uid}/{pageNum}")
+    public   R<List<VCEnterpreneurmemberOrderVO>> moreOrder(@PathVariable String uid,@PathVariable int pageNum){
+        List<VCEnterpreneurmemberOrderVO> list = ivcUserService.getVCEnterpreneurmemberOrderVOById(uid, pageNum-1);
+        if(list.size()==10){
+            return R.ok(list).setCode(200);
+        }
+        if(list.size()>0){
+            return R.ok(list).setCode(201);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+
+
+}

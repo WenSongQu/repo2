@@ -1,0 +1,48 @@
+package com.supergenius.admin.capital.controller;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.VCMemberOrderDisplayDO;
+import com.supergenius.admin.capital.model.VCOrderinfo;
+import com.supergenius.admin.capital.model.VCUserinfoDO;
+import com.supergenius.admin.capital.service.IVCOrdersService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@Api("会员订单")
+@RestController
+public class MemberOrderController {
+    @Autowired
+    IVCOrdersService ivcOrdersService;
+
+
+    @ApiOperation("获取会员订单列表")
+    @PostMapping("/getMemberOrderDisplay")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNum",value = "第几页",defaultValue = "1",dataType = "Integer"),
+            @ApiImplicitParam(name = "pageCount",value = "每页显示的数据",defaultValue = "9",dataType = "Integer"),
+            @ApiImplicitParam(name = "map",value = "筛选条件",defaultValue = "null",dataType = "Map")
+    })
+    public IPage<VCMemberOrderDisplayDO> getMemberOrderDisplay(@RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "9") Integer pageCount, @RequestParam(required = false) Map<String,Object> map ) {
+        IPage<VCMemberOrderDisplayDO> vcMemberOrderDisplayDOIPage = ivcOrdersService.selectMemberOrderDisplayDO(new Page(pageNum, pageCount), map);
+        return vcMemberOrderDisplayDOIPage;
+    }
+
+    @ApiOperation("获取会员订单通过oid")
+    @ApiImplicitParam(name = "oid",value = "订单编号",dataType = "String")
+    @GetMapping("/getMemberOrderByOid/{oid}")
+    public Object getMemberOrderByOid(@PathVariable("oid")String oid){
+        VCOrderinfo vcOrderinfo = ivcOrdersService.selectOrderInfo(oid);
+        return vcOrderinfo;
+    }
+
+
+
+}

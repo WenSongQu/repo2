@@ -1,0 +1,58 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.supergenius.admin.capital.model.VCRecordDO;
+import com.supergenius.admin.capital.mapper.VCRecordDao;
+import com.supergenius.admin.capital.service.IVCRecordService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.supergenius.admin.enums.ERecordType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCRecordServiceImpl extends ServiceImpl<VCRecordDao, VCRecordDO> implements IVCRecordService {
+    @Autowired
+    private VCRecordDao vcRecordDao;
+
+    @Override
+    public List<VCRecordDO> getGnvestmentRecord(String useruid,Integer pageNum) {
+        LambdaQueryWrapper<VCRecordDO> lambda=new LambdaQueryWrapper<>();
+        lambda.eq(VCRecordDO::getType, ERecordType.guarantee).eq(VCRecordDO::getUseruid,useruid).last("LIMIT "+pageNum.toString()+",10");
+        List<VCRecordDO> vcRecordDOS = vcRecordDao.selectList(lambda);
+        return vcRecordDOS;
+    }
+
+    @Override
+    public List<VCRecordDO> getConveneRecord(String useruid,Integer pageNum) {
+        LambdaQueryWrapper<VCRecordDO> lambda=new LambdaQueryWrapper<>();
+        lambda.eq(VCRecordDO::getType, ERecordType.convene).eq(VCRecordDO::getUseruid,useruid).last("LIMIT "+pageNum.toString()+",10");
+        List<VCRecordDO> vcRecordDOS = vcRecordDao.selectList(lambda);
+        return vcRecordDOS;
+    }
+
+    @Override
+    public List<VCRecordDO> getInvestmentRecord(String useruid,Integer pageNum) {
+        LambdaQueryWrapper<VCRecordDO> lambda=new LambdaQueryWrapper<>();
+        lambda.eq(VCRecordDO::getType, ERecordType.investment).eq(VCRecordDO::getUseruid,useruid).last("LIMIT "+pageNum.toString()+",10");
+        List<VCRecordDO> vcRecordDOS = vcRecordDao.selectList(lambda);
+        return vcRecordDOS;
+    }
+
+    @Override
+    public List<VCRecordDO> getEcomrmendedRecord(String useruid,Integer pageNum) {
+        LambdaQueryWrapper<VCRecordDO> lambda=new LambdaQueryWrapper<>();
+        lambda.eq(VCRecordDO::getType, ERecordType.ecomrmended).eq(VCRecordDO::getUseruid,useruid).last("LIMIT "+pageNum.toString()+",10");
+        List<VCRecordDO> vcRecordDOS = vcRecordDao.selectList(lambda);
+        return vcRecordDOS;
+    }
+}

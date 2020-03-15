@@ -1,0 +1,21 @@
+package com.supergenius.admin.security.impl;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+/**
+ * @author : zuoyu
+ * @description : 认证实现
+ * @date : 2019-11-26 09:53
+ **/
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+
+    @Override
+    public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+        return null;
+    }
+}

@@ -1,0 +1,52 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.VCInvoicePrintDO;
+import com.supergenius.admin.capital.model.VCMemberOrderDisplayDO;
+import com.supergenius.admin.capital.model.VCOrderinfo;
+import com.supergenius.admin.capital.model.VCOrdersDO;
+import com.supergenius.admin.capital.mapper.VCOrdersDao;
+import com.supergenius.admin.capital.service.IVCOrdersService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCOrdersServiceImpl extends ServiceImpl<VCOrdersDao, VCOrdersDO> implements IVCOrdersService {
+    @Autowired
+    VCOrdersDao vcOrdersDao;
+
+    @Override
+    public IPage<VCMemberOrderDisplayDO> selectMemberOrderDisplayDO(Page page, Map<String, Object> map) {
+        return vcOrdersDao.selectMemberOrderDisplayDO(page,map);
+    }
+
+    @Override
+    public VCOrderinfo selectOrderInfo(String oid) {
+        return vcOrdersDao.selectOrderInfo(oid);
+    }
+
+    @Override
+    public void invoiceed(List<String> oids) {
+        vcOrdersDao.invoice(oids);
+
+    }
+
+    @Override
+    public List<VCInvoicePrintDO> getVCInvoicePrintDO(List<String> list) {
+        List<VCInvoicePrintDO> vcInvoicePrintDO = vcOrdersDao.getVCInvoicePrintDO(list);
+        return  vcInvoicePrintDO;
+    }
+}

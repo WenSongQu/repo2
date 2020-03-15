@@ -1,0 +1,39 @@
+package com.supergenius.admin.capital.model.vo;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.supergenius.admin.enums.EOrder;
+import com.supergenius.admin.enums.EOrderType;
+import com.supergenius.admin.enums.EPayMethod;
+import com.supergenius.admin.enums.EStatus;
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.util.Date;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value="VCFiltrateVO对象", description="")
+public class VCFiltrateVO {
+    private String ordercode;
+    //   @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+    private String begintime;
+    //  @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+    private String endtime;
+    private Integer site;
+    private Integer orderstatus;
+    private Integer needinvoice;
+    private Integer invoicestatus;
+    private Integer type;
+    private String order;
+    private String corporation;
+    private String name;
+    private String starttime;
+    private Integer reviewstatus;
+    private String trainactivityname;
+    private String signcode;
+    private Integer trainactivitytype;
+    private Integer isused;
+}

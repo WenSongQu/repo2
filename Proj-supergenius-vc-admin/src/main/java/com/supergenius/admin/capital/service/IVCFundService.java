@@ -1,0 +1,18 @@
+package com.supergenius.admin.capital.service;
+
+import com.supergenius.admin.capital.model.VCFundDO;
+import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
+
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+public interface IVCFundService extends IService<VCFundDO> {
+    List<VCFundDO> getFundsById(String useruid);
+}

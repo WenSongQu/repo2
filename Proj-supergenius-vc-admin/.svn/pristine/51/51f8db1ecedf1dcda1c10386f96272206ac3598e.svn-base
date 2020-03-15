@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.user.mapper.USUserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.user.model.USUserDO">
+        <id column="oid" property="oid" />
+        <result column="uid" property="uid" />
+        <result column="usersn" property="usersn" />
+        <result column="email" property="email" />
+        <result column="newemail" property="newemail" />
+        <result column="phone" property="phone" />
+        <result column="openid" property="openid" />
+        <result column="mobile" property="mobile" />
+        <result column="validcode" property="validcode" />
+        <result column="password" property="password" />
+        <result column="paypwd" property="paypwd" />
+        <result column="resetpwd" property="resetpwd" />
+        <result column="account" property="account" />
+        <result column="freezeaccount" property="freezeaccount" />
+        <result column="totalpay" property="totalpay" />
+        <result column="totalincome" property="totalincome" />
+        <result column="type" property="type" />
+        <result column="channelfrom" property="channelfrom" />
+        <result column="channelid" property="channelid" />
+        <result column="logincount" property="logincount" />
+        <result column="lastlogintime" property="lastlogintime" />
+        <result column="lastloginip" property="lastloginip" />
+        <result column="data" property="data" />
+        <result column="status" property="status" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        oid, uid, usersn, email, newemail, phone, openid, mobile, validcode, password, paypwd, resetpwd, account, freezeaccount, totalpay, totalincome, type, channelfrom, channelid, logincount, lastlogintime, lastloginip, data, status, createtime, updatetime
+    </sql>
+
+</mapper>

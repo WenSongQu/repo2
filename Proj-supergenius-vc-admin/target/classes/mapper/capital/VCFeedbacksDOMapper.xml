@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCFeedbacksDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCFeedbacksDO">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="useruid" property="useruid" />
+        <result column="username" property="username" />
+        <result column="userside" property="userside" />
+        <result column="toid" property="toid" />
+        <result column="toname" property="toname" />
+        <result column="tostatus" property="tostatus" />
+        <result column="reporttype" property="reporttype" />
+        <result column="reason" property="reason" />
+        <result column="content" property="content" />
+        <result column="images" property="images" />
+        <result column="mobile" property="mobile" />
+        <result column="email" property="email" />
+        <result column="handle" property="handle" />
+        <result column="revieweruid" property="revieweruid" />
+        <result column="reviewer" property="reviewer" />
+        <result column="reviewtime" property="reviewtime" />
+        <result column="secondrevieweruid" property="secondrevieweruid" />
+        <result column="secondreviewer" property="secondreviewer" />
+        <result column="secondreviewtime" property="secondreviewtime" />
+        <result column="secondreview" property="secondreview" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, useruid, username, userside, toid, toname, tostatus, reporttype, reason, content, images, mobile, email, handle, revieweruid, reviewer, reviewtime, secondrevieweruid, secondreviewer, secondreviewtime, secondreview, status, data, createtime, updatetime
+    </sql>
+
+</mapper>

@@ -1,0 +1,59 @@
+package com.supergenius.admin.enums;
+
+import com.baomidou.mybatisplus.annotation.EnumValue;
+import lombok.Getter;
+
+/**
+ * 状态
+ *
+ * @author zuoyu
+ */
+@Getter
+public enum StatusEnum {
+    /**
+     * 冻结
+     */
+    DISABLE(0),
+    /**
+     * 未删除
+     */
+    ENABLE(1),
+    /**
+     * 删除
+     */
+    DELETED(2),
+    FREEZE(3),
+    INIT(10),
+    START(11),
+    WAIT(12),
+    END(13),
+    ONGOING(22),
+    OVER(23);
+
+    @EnumValue
+    private int value;
+
+    private StatusEnum(int value) {
+        this.value = value;
+    }
+
+
+    /**
+     * 获取枚举实例
+     */
+    public static StatusEnum get(int v) {
+        String str = String.valueOf(v);
+        return get(str);
+    }
+
+    public static StatusEnum get(String str) {
+        for (StatusEnum e : values()) {
+            if (e.toString().equals(str)) {
+                return e;
+            }
+        }
+        return null;
+    }
+
+
+}

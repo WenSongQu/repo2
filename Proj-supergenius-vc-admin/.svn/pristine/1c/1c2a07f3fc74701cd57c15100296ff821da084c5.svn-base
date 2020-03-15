@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCTrainactivityDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCTrainactivityDO">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="name" property="name" />
+        <result column="images" property="images" />
+        <result column="starttime" property="starttime" />
+        <result column="overtime" property="overtime" />
+        <result column="signtime" property="signtime" />
+        <result column="endtime" property="endtime" />
+        <result column="pernumber" property="pernumber" />
+        <result column="mechnumber" property="mechnumber" />
+        <result column="address" property="address" />
+        <result column="notice" property="notice" />
+        <result column="price" property="price" />
+        <result column="course" property="course" />
+        <result column="process" property="process" />
+        <result column="type" property="type" />
+        <result column="coursecount" property="coursecount" />
+        <result column="summoney" property="summoney" />
+        <result column="showtime" property="showtime" />
+        <result column="activitystatus" property="activitystatus" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, name, images, starttime, overtime, signtime, endtime, pernumber, mechnumber, address, notice, price, course, process, type, coursecount, summoney, showtime, activitystatus, status, data, createtime, updatetime
+    </sql>
+
+</mapper>

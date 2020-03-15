@@ -1,0 +1,110 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.mapper.VCUserinfoDao;
+import com.supergenius.admin.capital.model.VCUserDO;
+import com.supergenius.admin.capital.mapper.VCUserDao;
+import com.supergenius.admin.capital.model.VCUserinfoDO;
+import com.supergenius.admin.capital.model.vo.*;
+import com.supergenius.admin.capital.service.IVCUserService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCUserServiceImpl extends ServiceImpl<VCUserDao, VCUserDO> implements IVCUserService {
+    @Autowired
+    VCUserDao vcUserDao;
+    @Autowired
+    VCUserinfoDao vcUserinfoDao;
+    public Map<String,Integer> getUserCount(){
+        Map<String,Integer> map=new HashMap<>();
+        //创业人
+        QueryWrapper<VCUserDO> startupWrapper=new QueryWrapper<>();
+        startupWrapper.lambda().in(VCUserDO::getKind, Arrays.asList(11,12));
+        int startupSize = vcUserDao.selectList(startupWrapper).size();
+        map.put("startupSize",startupSize);
+        //投资人
+        QueryWrapper<VCUserDO> investmentWrapper=new QueryWrapper<>();
+        investmentWrapper.lambda().in(VCUserDO::getKind, Arrays.asList(13,14));
+        int investmentSize = vcUserDao.selectList(investmentWrapper).size();
+        map.put("investmentSize",investmentSize);
+        //天才保荐人
+        QueryWrapper<VCUserinfoDO>  queryWrapper=new QueryWrapper<>();
+        queryWrapper.lambda().in(VCUserinfoDO::getIdentity, Arrays.asList(2,3,7,15,6,10,14));
+        int guarantorSize = vcUserinfoDao.selectList(queryWrapper).size();
+        map.put("guarantorSize",guarantorSize);
+        // 天才推荐人
+        QueryWrapper<VCUserinfoDO>  queryWrapper1=new QueryWrapper<>();
+        queryWrapper1.lambda().in(VCUserinfoDO::getIdentity,  Arrays.asList(4,5,15,6,14,12));
+        int recommendSize = vcUserinfoDao.selectList(queryWrapper1).size();
+        map.put("recommendSize",recommendSize);
+        //天才召集人 convener
+        QueryWrapper<VCUserinfoDO>  queryWrapper2=new QueryWrapper<>();
+        queryWrapper2.lambda().in(VCUserinfoDO::getIdentity,Arrays.asList(15,8,14,12));
+        int convenerSize = vcUserinfoDao.selectList(queryWrapper2).size();
+        map.put("convenerSize",convenerSize);
+        return  map;
+    }
+
+    @Override
+    public IPage<VCEntrepreneurmemberDisplayVO> selectMemberOrderDisplayDO(Page page, VCFiltrateUserVO vcFiltrateUserVO) {
+        return vcUserDao.selectMemberOrderDisplayDO(page,vcFiltrateUserVO);
+    }
+
+    @Override
+    public void freezeUser(List<String> users) {
+        vcUserDao.freezeUser(users);
+    }
+
+    @Override
+    public void unFreezeUser(List<String> users) {
+        vcUserDao.unFreezeUser(users);
+    }
+
+    @Override
+    public VCEnterpreneurmemberBasePersonVO getVCEnterpreneurmemberBaseInfoVOById(String uid) {
+        return vcUserDao.getVCEnterpreneurmemberBaseInfoVOById(uid);
+    }
+
+    @Override
+    public List<VCEnterpreneurmemberFinancingVO> getVCEnterpreneurmemberFinancingInfoVOById(String uid) {
+        return vcUserDao.getVCEnterpreneurmemberFinancingInfoVOById(uid);
+    }
+
+    @Override
+    public List<VCEnterpreneurmemberOrderVO> getVCEnterpreneurmemberOrderVOById(String uid) {
+        return vcUserDao.getVCEnterpreneurmemberOrderVOById(uid);
+    }
+
+    @Override
+    public VCEnterpreneurmemberBaseCompanyVO getVCEnterpreneurmemberBaseCompanyVOById(String uid) {
+        return vcUserDao.getVCEnterpreneurmemberBaseCompanyVOById(uid);
+    }
+
+    @Override
+    public IPage<VCInvestorsDisplayVO> selectInvestorsDisplayVO(Page page, VCFiltrateUserVO vcFiltrateUserVO) {
+        return vcUserDao.selectInvestorsDisplayVO(page,vcFiltrateUserVO);
+    }
+
+    @Override
+    public VCInvestorsBasePersonInfoVO getVCInvestorsBasePersonInfoVCById(String uid) {
+        return vcUserDao.getVCInvestorsBasePersonInfoVCById(uid);
+    }
+
+}

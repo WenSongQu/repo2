@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.user.mapper.USMessageDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.user.model.USMessageDO">
+        <id column="uid" property="uid" />
+        <result column="fromuseruid" property="fromuseruid" />
+        <result column="fromuseroid" property="fromuseroid" />
+        <result column="fromusername" property="fromusername" />
+        <result column="touseruid" property="touseruid" />
+        <result column="touseroid" property="touseroid" />
+        <result column="tousername" property="tousername" />
+        <result column="useravatar" property="useravatar" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="href" property="href" />
+        <result column="state" property="state" />
+        <result column="type" property="type" />
+        <result column="site" property="site" />
+        <result column="sn" property="sn" />
+        <result column="data" property="data" />
+        <result column="status" property="status" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, fromuseruid, fromuseroid, fromusername, touseruid, touseroid, tousername, useravatar, title, content, href, state, type, site, sn, data, status, createtime, updatetime
+    </sql>
+
+</mapper>

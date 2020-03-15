@@ -1,0 +1,22 @@
+package com.supergenius.admin.capital.model.vo;
+
+
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value="VCFiltrateUserVO对象", description="")
+public class VCFiltrateUserVO {
+    private String corporation;
+    private String phone;
+    private Integer kind;
+    private Integer status;
+    private String begincreatetime;
+    private String endcreatetime;
+    private Integer minfinancingcount;
+    private Integer maxfinancingcount;
+}

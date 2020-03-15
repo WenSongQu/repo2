@@ -1,0 +1,38 @@
+package com.supergenius.admin.capital.model.vo;
+
+import com.supergenius.admin.enums.*;
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value = "VCMeetingOrderInfoDO对象", description = "")
+public class VCMeetingOrderInfoVO {
+    private String ordercode;
+    private String oid;
+    private String corporation;
+    private BigDecimal amount;
+    private Date createtime;
+    private EPayMethod site;
+    private String name;
+    private String sn;
+    private EStatus needinvoice;
+    private EStatus invoicestatus;
+    private Date applytime;
+    private Date invoicetime;
+    private EInvoiceType type;
+    private EInvoiceHead head;
+    private String content;
+    private String company;
+    private String taxnumber;
+    private String mobile;
+    private String email;
+    private String addressee;
+    private String address;
+}

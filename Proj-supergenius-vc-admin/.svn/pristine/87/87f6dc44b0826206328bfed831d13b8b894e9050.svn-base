@@ -1,0 +1,25 @@
+package com.supergenius.admin;
+
+import com.supergenius.admin.capital.mapper.VCContentDao;
+import com.supergenius.admin.capital.model.VCContentDO;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.web.WebAppConfiguration;
+
+/**
+ * 注意测试时候模块分包测试，不要在这里测试
+ */
+@SpringBootTest
+@WebAppConfiguration
+public abstract class BaseProjSupergeniusVcAdminApplicationTests {
+    @Autowired
+    VCContentDao vcContentDao;
+
+
+    @Test
+    void contextLoads() {
+        vcContentDao.insert(new VCContentDO());
+    }
+
+}

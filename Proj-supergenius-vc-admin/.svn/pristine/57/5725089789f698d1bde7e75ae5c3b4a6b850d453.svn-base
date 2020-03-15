@@ -1,0 +1,42 @@
+package com.supergenius.admin.capital.controller;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.VCGuaranteeAndRecommendDisplayDO;
+import com.supergenius.admin.capital.service.IVCOrdersService;
+import com.supergenius.admin.utils.ErrorCode;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@Api("天才推荐人订单 ")
+@RestController
+public class RecommendOrderController {
+    @Autowired
+    IVCOrdersService ivcOrdersService;
+    @ApiOperation("获取天才推荐人订单")
+    @GetMapping("/guaranteeOrderDisplay")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNum", value = "第几页", defaultValue = "1", dataType = "Integer"),
+            @ApiImplicitParam(name = "pageCount", value = "每页显示的数据", defaultValue = "10", dataType = "Integer"),
+            @ApiImplicitParam(name = "map", value = "筛选条件", defaultValue = "null", dataType = "Map")
+    })
+    public R<IPage<VCGuaranteeAndRecommendDisplayDO>> getselectVCRecommendDisplayDO(@RequestParam(required = false, defaultValue = "1") Integer pageNum, @RequestParam(required = false, defaultValue = "10") Integer pageCount, @RequestParam(required = false) Map<String, Object> map) {
+        IPage<VCGuaranteeAndRecommendDisplayDO> vcGuaranteeAndRecommendDisplayDOIPage = ivcOrdersService.selectVCrecommendDisplayDO(new Page(pageNum, pageCount), map);
+        if(vcGuaranteeAndRecommendDisplayDOIPage.getRecords().size()>0){
+            return R.ok(vcGuaranteeAndRecommendDisplayDOIPage).setCode(200);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+
+
+}

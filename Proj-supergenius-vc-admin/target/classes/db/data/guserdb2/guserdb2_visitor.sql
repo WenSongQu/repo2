@@ -1,0 +1,10 @@
+CREATE TABLE tal_user
+(id INT PRIMARY KEY AUTO_INCREMENT,
+ NAME VARCHAR(100),
+ create_time DATETIME,
+ update_time DATETIME,
+ VERSION INT)
+ 
+ 
+ SELECT *FROM tal_user
+ 

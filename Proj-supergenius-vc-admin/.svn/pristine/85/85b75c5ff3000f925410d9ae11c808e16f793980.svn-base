@@ -1,0 +1,86 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.alibaba.druid.util.StringUtils;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.enums.SqlLike;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.mapper.VCInvestmentDao;
+import com.supergenius.admin.capital.model.VCIncubatorDO;
+import com.supergenius.admin.capital.mapper.VCIncubatorDao;
+import com.supergenius.admin.capital.model.VCInvestmentDO;
+import com.supergenius.admin.capital.model.vo.VCFiltrateIncubatorVO;
+import com.supergenius.admin.capital.service.IVCIncubatorService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.supergenius.admin.enums.EStatus;
+import freemarker.template.utility.StringUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCIncubatorServiceImpl extends ServiceImpl<VCIncubatorDao, VCIncubatorDO> implements IVCIncubatorService {
+    @Autowired
+    VCIncubatorDao vcIncubatorDao;
+
+    @Override
+    public IPage<VCIncubatorDO> getDisplayList(Page page, VCFiltrateIncubatorVO filtrate) {
+        LambdaUpdateWrapper<VCIncubatorDO> lambda = new LambdaUpdateWrapper<VCIncubatorDO>();
+        lambda.like(!StringUtils.isEmpty(filtrate.getName()),VCIncubatorDO::getName,filtrate.getName())
+                .eq(!StringUtils.isEmpty(filtrate.getTag()),VCIncubatorDO::getTag,filtrate.getTag())
+                .ge(filtrate.getBeginshowtime()!=null,VCIncubatorDO::getShowtime,filtrate.getBeginshowtime())
+                .le(filtrate.getLateshowtime()!=null,VCIncubatorDO::getShowtime,filtrate.getLateshowtime())
+                .eq(filtrate.getStatus()!=null,VCIncubatorDO::getStatus,filtrate.getStatus())
+                .ge(filtrate.getMincompanycount()!=null,VCIncubatorDO::getCompanycount,filtrate.getMincompanycount())
+                .le(filtrate.getMaxcompanycount()!=null,VCIncubatorDO::getCompanycount,filtrate.getMaxcompanycount());
+        IPage<VCIncubatorDO> vcInvestmentDOIPage = vcIncubatorDao.selectPage(page, lambda);
+        return vcInvestmentDOIPage;
+    }
+
+    @Override
+    public void closeIncubator(List<String> list) {
+        VCIncubatorDO temp = new VCIncubatorDO();
+        temp.setStatus(EStatus.disable);
+        LambdaUpdateWrapper<VCIncubatorDO> lambda = new LambdaUpdateWrapper<VCIncubatorDO>();
+        lambda.in(VCIncubatorDO::getUid,list);
+        vcIncubatorDao.update(temp,lambda);
+    }
+
+    @Override
+    public void startIncubator(List<String> list) {
+        VCIncubatorDO temp = new VCIncubatorDO();
+        temp.setStatus(EStatus.enable);
+        LambdaUpdateWrapper<VCIncubatorDO> lambda = new LambdaUpdateWrapper<VCIncubatorDO>();
+        lambda.in(VCIncubatorDO::getUid,list);
+        vcIncubatorDao.update(temp,lambda);
+    }
+
+    @Override
+    public void deleteIncubator(List<String> list) {
+        VCIncubatorDO temp = new VCIncubatorDO();
+        temp.setStatus(EStatus.deleted);
+        LambdaUpdateWrapper<VCIncubatorDO> lambda = new LambdaUpdateWrapper<VCIncubatorDO>();
+        lambda.in(VCIncubatorDO::getUid,list);
+        vcIncubatorDao.update(temp,lambda);
+    }
+
+    @Override
+    public VCIncubatorDO getByUid(String uid) {
+        LambdaQueryWrapper<VCIncubatorDO> lambda=new LambdaQueryWrapper<>();
+        lambda.eq(VCIncubatorDO::getUid,uid);
+        VCIncubatorDO info = vcIncubatorDao.selectOne(lambda);
+        return info;
+    }
+}

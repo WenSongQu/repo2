@@ -1,0 +1,43 @@
+package com.supergenius.admin.capital.mapper;
+
+import com.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.*;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * <p>
+ * Mapper 接口
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@DS(value = "master_capital")
+@Repository
+public interface VCOrdersDao extends BaseMapper<VCOrdersDO> {
+    //  IPage<VCMemberOrderDisplayDO> selectGuaranteeDisplayDO(Page page, @Param("map") Map<String, Object> map);
+    IPage<VCMemberOrderDisplayDO> selectMemberOrderDisplayDO(Page page, @Param("map") Map<String, Object> map);
+
+    VCOrderinfo selectOrderInfo(String oid);
+
+    IPage<VCGuaranteeAndRecommendDisplayDO> selectVCGuaranteeDisplayDO(Page page, @Param("map") Map<String, Object> map);
+
+    IPage<VCGuaranteeAndRecommendDisplayDO> selectVCrecommendDisplayDO(Page page, @Param("map") Map<String, Object> map);
+
+    IPage<VCMeetingOrderDisplayDO> selectVCMeetingOrderDisplayDO(Page page, @Param("map") Map<String, Object> map);
+
+    VCMeetingOrderInfoDO selectVCMeetingOrderInfoDO(String oid);
+
+    Integer invoice(@Param("oids") List<String> oids);
+    List<VCInvoicePrintDO> getVCInvoicePrintDO(List<String> list);
+    int returnOrder(@Param("oids")List<String> oids);
+
+
+}

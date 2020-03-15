@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.user.mapper.USContentDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.user.model.USContentDO">
+        <id column="uid" property="uid" />
+        <result column="name" property="name" />
+        <result column="type" property="type" />
+        <result column="title" property="title" />
+        <result column="titleshort" property="titleshort" />
+        <result column="summary" property="summary" />
+        <result column="content" property="content" />
+        <result column="data" property="data" />
+        <result column="imgtitle" property="imgtitle" />
+        <result column="imglittle" property="imglittle" />
+        <result column="imgmedium" property="imgmedium" />
+        <result column="imgbig" property="imgbig" />
+        <result column="imgoriginal" property="imgoriginal" />
+        <result column="status" property="status" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, name, type, title, titleshort, summary, content, data, imgtitle, imglittle, imgmedium, imgbig, imgoriginal, status, createtime, updatetime
+    </sql>
+
+</mapper>

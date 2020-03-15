@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.user.mapper.USNewsDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.user.model.USNewsDO">
+        <id column="uid" property="uid" />
+        <result column="fromuid" property="fromuid" />
+        <result column="touid" property="touid" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="href" property="href" />
+        <result column="type" property="type" />
+        <result column="isread" property="isread" />
+        <result column="status" property="status" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, fromuid, touid, title, content, href, type, isread, status, createtime, updatetime
+    </sql>
+
+</mapper>

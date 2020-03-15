@@ -1,0 +1,44 @@
+package com.supergenius.admin.capital.model;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.supergenius.admin.enums.EInvoiceHead;
+import com.supergenius.admin.enums.EInvoiceType;
+import com.supergenius.admin.enums.EPayMethod;
+import com.supergenius.admin.enums.EStatus;
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value="VCOrderinfo对象", description="")
+public class VCOrderinfo {
+    private String oid;
+    private String corporation;
+    private BigDecimal amount;
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+    private Date createtime;
+    private EPayMethod site;
+    private EStatus needinvoice;
+    private EStatus invoicestatus;
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+    private Date applytime;
+    @JsonFormat(pattern="yyyy-MM-dd",timezone = "GMT+8")
+    private Date invoicetime;
+    private EInvoiceType type;
+    private EInvoiceHead head;
+    private String content;
+    private String company;
+    private String taxnumber;
+    private String mobile;
+    private String email;
+    private String addressee;
+    private String address;
+
+
+}

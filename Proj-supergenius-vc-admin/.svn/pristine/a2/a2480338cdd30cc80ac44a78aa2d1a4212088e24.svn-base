@@ -1,0 +1,103 @@
+package com.supergenius.admin.capital.controller;
+
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.vo.VCFiltrateVO;
+import com.supergenius.admin.capital.model.vo.VCInvoicePrintVO;
+import com.supergenius.admin.capital.model.vo.VCMeetingOrderDisplayVO;
+import com.supergenius.admin.capital.model.vo.VCMeetingOrderInfoVO;
+import com.supergenius.admin.capital.service.IVCOrdersService;
+import com.supergenius.admin.utils.EntityUtils;
+import com.supergenius.admin.utils.ErrorCode;
+import com.supergenius.admin.utils.ExcelUtil;
+import com.supergenius.admin.utils.JsonUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
+@Slf4j
+@Api("会议室预约订单")
+@RequestMapping("/meetingOrder")
+@RestController
+public class MeetingOrderController {
+    @Autowired
+    IVCOrdersService ivcOrdersService;
+
+    @ApiOperation("获取会议室预约订单列表")
+    @GetMapping("/list/{pageNum}")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNum", value = "页数", required = true, paramType = "path", dataType = "int"),
+            @ApiImplicitParam(name = "filtrate", value = "过滤条件", paramType = "query", dataType = "String")
+    })
+    public R<IPage<VCMeetingOrderDisplayVO>> getVCMeetingOrderDisplayDO(@RequestParam(name = "filtrate", required = false) String filtrateStr, @PathVariable int pageNum) {
+        log.info(filtrateStr + "--------------");
+        VCFiltrateVO vcFiltrateVO = JSON.parseObject(filtrateStr, VCFiltrateVO.class);
+        log.info(vcFiltrateVO + "--------------");
+        IPage<VCMeetingOrderDisplayVO> vcMeetingOrderDisplayDOIPage = ivcOrdersService.selectVCMeetingOrderDisplayDO(new Page(pageNum, 10), vcFiltrateVO);
+        if (vcMeetingOrderDisplayDOIPage.getRecords().size() > 0) {
+            return R.ok(vcMeetingOrderDisplayDOIPage).setCode(200);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+    @ApiOperation("获取会议室订单信息")
+    @GetMapping("/{oid}")
+    @ApiImplicitParam(name = "oid", value = "订单uid", paramType = "path", dataType = "String")
+    public R<VCMeetingOrderInfoVO> getMeetingOrderByOid(@PathVariable("oid") String oid) {
+        VCMeetingOrderInfoVO vcMeetingOrderInfoDO = ivcOrdersService.selectVCMeetingOrderInfoDO(oid);
+        if (vcMeetingOrderInfoDO != null) {
+            return R.ok(vcMeetingOrderInfoDO).setCode(200);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+    @ApiOperation("通过订单编号退款")
+    @ApiImplicitParam(name = "oid", value = "订单编号", dataType = "String", allowMultiple = true, paramType = "query")
+    @PostMapping("/return")
+    public R<Boolean> returnOrder(String... oids) {
+        int i = ivcOrdersService.returnOrder(Arrays.asList(oids));
+        if (i != oids.length) {
+            return R.failed(new ErrorCode(401));
+        }
+        return R.ok(true);
+    }
+
+    @ApiOperation("开票操作")
+    @ApiImplicitParam(name = "oids", value = "订单uid", allowMultiple = true, dataType = "String", paramType = "query")
+    @PutMapping("/invoice")
+    public R<String> invoiceOids(String... oids) {
+        ivcOrdersService.invoiceed(Arrays.asList(oids));
+        return R.ok("success").setCode(200);
+    }
+
+    @ApiOperation("导出excel")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "oids", value = "订单编号", allowMultiple = true, dataType = "String", paramType = "query"),
+    })
+    @GetMapping("/Excel")
+    public void printExcel(HttpServletResponse response, String oids) throws Exception {
+        List<String> ids = JsonUtil.jsonStringToList(oids, String.class);
+        // List<String> list = Arrays.asList(ids);
+
+
+        List<VCInvoicePrintVO> vcInvoicePrintDO = ivcOrdersService.getVCInvoicePrintDO(ids);
+        vcInvoicePrintDO.forEach(System.out::println);
+        // ExcelUtil.SheetBuilder<VCInvoicePrintVO> sheetBuilderOne = ExcelUtil.buildSheet("sheet1", VCInvoicePrintVO.class, vcInvoicePrintDO);
+
+        ExcelUtil.simpleWrite(System.currentTimeMillis() + "", VCInvoicePrintVO.class, vcInvoicePrintDO, response);
+
+    }
+
+
+}

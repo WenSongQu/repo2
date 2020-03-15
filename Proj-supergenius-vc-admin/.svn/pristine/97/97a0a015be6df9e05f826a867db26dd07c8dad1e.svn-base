@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCUserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCUserDO">
+        <id column="id" property="id"/>
+        <result column="useruid" property="useruid"/>
+        <result column="idcardimg" property="idcardimg"/>
+        <result column="idcardimgbig" property="idcardimgbig"/>
+        <result column="idcardimgmedium" property="idcardimgmedium"/>
+        <result column="idcardimglittle" property="idcardimglittle"/>
+        <result column="businesscode" property="businesscode"/>
+        <result column="corporation" property="corporation"/>
+        <result column="kind" property="kind"/>
+        <result column="financingcount" property="financingcount"/>
+        <result column="followcount" property="followcount"/>
+        <result column="freezecount" property="freezecount"/>
+        <result column="status" property="status"/>
+        <result column="data" property="data"/>
+        <result column="createtime" property="createtime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, useruid, idcardimg, idcardimgbig, idcardimgmedium, idcardimglittle, businesscode, corporation, kind, financingcount, followcount, freezecount, status, data, createtime, updatetime
+    </sql>
+    <update id="freezeUser">
+        UPDATE USER u, project p SET u.freezecount=u.freezecount+1,u.`status`=3, p.STATUS=3
+        ,p.freezecount=p.freezecount+1
+        WHERE u.useruid=p.useruid AND u.`useruid` IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+
+    </update>
+    <update id="unFreezeUser">
+        UPDATE USER AS u SET u.`status`=1 WHERE u.`useruid` IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item}
+        </foreach>
+    </update>
+    <select id="selectMemberOrderDisplayDO"
+            resultType="com.supergenius.admin.capital.model.vo.VCEntrepreneurmemberDisplayVO">
+        SELECT
+        u2.useruid,
+        u1.usersn,
+        u2.`corporation`,
+        ui.`avatarlittle`,
+        u1.phone,
+        u2.kind,
+        u2.createtime,
+        p.name,
+        u2.financingcount,
+        u2.status,
+        p.pid
+        FROM
+        `guserdb2`.`user` AS u1
+        INNER JOIN `gventurecapitaldb`.`user` AS u2
+        ON u1.uid = u2.useruid
+        LEFT JOIN project AS p
+        ON u2.useruid = p.useruid
+        LEFT JOIN `guserdb2`.`userinfo` AS ui
+        ON u2.`useruid`=ui.`uid`
+        <trim prefix="where" suffixOverrides="and">
+            u2.kind IN (1, 2) and
+            <if test="map.corporation!=null">
+                u2.`corporation` like CONCAT('%',#{map.corporation},'%') and
+            </if>
+            <if test="map.phone!=null">
+                u1.phone like CONCAT('%',#{map.phone},'%') and
+            </if>
+            <if test="map.kind!=null">
+                u1.kind=#{map.kind}
+            </if>
+            <if test="map.status!=null">
+                u1.kind=#{map.status}
+            </if>
+            <if test="map.status!=null">
+                u1.kind=#{map.status}
+            </if>
+            <if test="map.begincreatetime!=null">
+                u2.`createtime` &gt; #{map.begincreatetime}
+            </if>
+            <if test="map.endcreatetime!=null">
+                u2.`createtime` &lt; #{map.endcreatetime}
+            </if>
+            <if test="map.minfinancingcount !=null">
+                u2.`financingcount` &gt; #{map.minfinancingcount}
+            </if>
+            <if test="map.maxfinancingcount !=null">
+                u2.`financingcount` &lt; #{map.maxfinancingcount}
+            </if>
+
+
+        </trim>
+
+
+    </select>
+    <select id="getVCEnterpreneurmemberBaseInfoVOById"
+            resultType="com.supergenius.admin.capital.model.vo.VCEnterpreneurmemberBasePersonVO">
+        SELECT
+   db2ui.showtime,db2ui.avatar,db2ui.`gender`,db2ui.`birthday`,db2ui.`idtype`,db2ui.`identityid`,
+   db2u.`phone`,db2u.`usersn`,db2u.`createtime`,dbu.idcardimglittle
+FROM
+  `guserdb2`.`user` AS db2u
+  LEFT JOIN `guserdb2`.`userinfo` AS db2ui
+    ON db2u.uid = db2ui.`uid`
+  LEFT JOIN `gventurecapitaldb`.`user` AS dbu
+    ON dbu.`useruid` = db2u.`uid`
+    WHERE db2u.`uid`=#{uid}
+    </select>
+    <select id="getVCEnterpreneurmemberFinancingInfoVOById"
+            resultType="com.supergenius.admin.capital.model.vo.VCEnterpreneurmemberFinancingVO">
+        SELECT  p.projectcode,p.name,f.rounds ,f.amount,f.platform ,f.status,f.investor, f.platform ,f.createtime  FROM USER AS u  LEFT JOIN project AS p ON u.useruid=p.useruid
+LEFT JOIN financing AS f ON p.pid=f.pid WHERE
+ u.useruid=#{uid}
+
+    </select>
+    <select id="getVCEnterpreneurmemberOrderVOById"
+            resultType="com.supergenius.admin.capital.model.vo.VCEnterpreneurmemberOrderVO">
+SELECT ordercode,NAME,amount, site,TYPE,createtime FROM orders  where useruid=#{uid}
+
+    </select>
+    <select id="getVCEnterpreneurmemberBaseCompanyVOById"
+            resultType="com.supergenius.admin.capital.model.vo.VCEnterpreneurmemberBaseCompanyVO">
+        SELECT
+  db2ui.avatar,
+  db2ui.`showname`,
+  u.businesscode,
+  u.corporation,
+  db2ui.identityid,
+  db2u.`phone`,
+  db2u.`usersn`,
+  db2u.createtime
+FROM
+  `guserdb2`.`user` AS db2u
+  INNER JOIN `guserdb2`.`userinfo` AS db2ui
+    ON db2u.`oid` = db2ui.`uid`
+  LEFT JOIN `user` AS u
+    ON db2u.`oid` = u.`useruid`
+    WHERE db2u.`uid`=#{uid}
+    </select>
+
+</mapper>

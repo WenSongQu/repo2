@@ -1,0 +1,111 @@
+package com.supergenius.admin.user.model;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
+import com.supergenius.admin.enums.StatusEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("message")
+@ApiModel(value="USMessageDO对象", description="")
+public class USMessageDO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "唯一ID")
+    @TableId(value = "uid", type = IdType.AUTO)
+    private String uid;
+
+    @ApiModelProperty(value = "来自谁UID")
+    @TableField("fromuseruid")
+    private String fromuseruid;
+
+    @ApiModelProperty(value = "来自谁OID")
+    @TableField("fromuseroid")
+    private Integer fromuseroid;
+
+    @ApiModelProperty(value = "来自谁NAME")
+    @TableField("fromusername")
+    private String fromusername;
+
+    @ApiModelProperty(value = "评论给谁的uid")
+    @TableField("touseruid")
+    private String touseruid;
+
+    @ApiModelProperty(value = "发给谁OID")
+    @TableField("touseroid")
+    private Integer touseroid;
+
+    @ApiModelProperty(value = "发给谁NAME")
+    @TableField("tousername")
+    private String tousername;
+
+    @ApiModelProperty(value = "会员头像or网站头像")
+    @TableField("useravatar")
+    private String useravatar;
+
+    @ApiModelProperty(value = "标题")
+    @TableField("title")
+    private String title;
+
+    @ApiModelProperty(value = "内容")
+    @TableField("content")
+    private String content;
+
+    @ApiModelProperty(value = "链接")
+    @TableField("href")
+    private String href;
+
+    @ApiModelProperty(value = "未读、已读、已删除")
+    @TableField("state")
+    private Boolean state;
+
+    @ApiModelProperty(value = "消息类型")
+    @TableField("type")
+    private Boolean type;
+
+    @ApiModelProperty(value = "来自哪个项目")
+    @TableField("site")
+    private Boolean site;
+
+    @ApiModelProperty(value = "编号")
+    @TableField("sn")
+    private String sn;
+
+    @ApiModelProperty(value = "其他数据json格式")
+    @TableField("data")
+    private String data;
+
+    @ApiModelProperty(value = "状态(0禁用1启用)")
+    @TableField("status")
+    private StatusEnum status;
+
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "createtime", fill = FieldFill.INSERT)
+    private Date createtime;
+
+    @ApiModelProperty(value = "最后更新时间")
+    @TableField("updatetime")
+    private Date updatetime;
+
+
+}

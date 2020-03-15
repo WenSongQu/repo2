@@ -1,0 +1,25 @@
+package com.supergenius.admin.capital.model.vo;
+
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.util.Date;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value="VCFiltrateVO对象", description="")
+public class VCFiltrateVO {
+    private String ordercode;
+    private Date begintime;
+    private Date endtime;
+    private Integer site;
+    private Integer orderstatus;
+    private Integer needinvoice;
+    private Integer invoicestatus;
+    private Integer type;
+    private Integer order;
+
+}

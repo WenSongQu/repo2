@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCProjectinfoDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCProjectinfoDO">
+        <id column="id" property="id" />
+        <result column="pid" property="pid" />
+        <result column="amount" property="amount" />
+        <result column="currencytype" property="currencytype" />
+        <result column="saleup" property="saleup" />
+        <result column="saledown" property="saledown" />
+        <result column="rounds" property="rounds" />
+        <result column="exitmode" property="exitmode" />
+        <result column="nexttime" property="nexttime" />
+        <result column="financing" property="financing" />
+        <result column="videouid" property="videouid" />
+        <result column="videobuy" property="videobuy" />
+        <result column="videoupload" property="videoupload" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pid, amount, currencytype, saleup, saledown, rounds, exitmode, nexttime, financing, videouid, videobuy, videoupload, status, data, createtime, updatetime
+    </sql>
+
+</mapper>

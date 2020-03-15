@@ -1,0 +1,131 @@
+package com.supergenius.admin.capital.model;
+
+import java.math.BigDecimal;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("trainactivity")
+@ApiModel(value="VCTrainactivityDO对象", description="")
+public class VCTrainactivityDO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    @ApiModelProperty(value = "用户唯一uid")
+    @TableField(value = "uid", fill = FieldFill.INSERT)
+    private String uid;
+
+    @ApiModelProperty(value = "名字")
+    @TableField("name")
+    private String name;
+
+    @ApiModelProperty(value = "图片")
+    @TableField("images")
+    private String images;
+
+    @ApiModelProperty(value = "开始时间")
+    @TableField("starttime")
+    private Date starttime;
+
+    @ApiModelProperty(value = "结束时间")
+    @TableField("overtime")
+    private Date overtime;
+
+    @ApiModelProperty(value = "报名开始时间")
+    @TableField("signtime")
+    private Date signtime;
+
+    @ApiModelProperty(value = "报名结束时间")
+    @TableField("endtime")
+    private Date endtime;
+
+    @ApiModelProperty(value = "人数名额")
+    @TableField("pernumber")
+    private Integer pernumber;
+
+    @ApiModelProperty(value = "企业机构名额")
+    @TableField("mechnumber")
+    private Integer mechnumber;
+
+    @ApiModelProperty(value = "地址")
+    @TableField("address")
+    private String address;
+
+    @ApiModelProperty(value = "须知")
+    @TableField("notice")
+    private String notice;
+
+    @ApiModelProperty(value = "课程价格")
+    @TableField("price")
+    private BigDecimal price;
+
+    @ApiModelProperty(value = "课程表json")
+    @TableField("course")
+    private String course;
+
+    @ApiModelProperty(value = "活动流程")
+    @TableField("process")
+    private String process;
+
+    @ApiModelProperty(value = "类型（路演|企业培训）")
+    @TableField("type")
+    private Boolean type;
+
+    @ApiModelProperty(value = "课程数量")
+    @TableField("coursecount")
+    private Integer coursecount;
+
+    @ApiModelProperty(value = "盈利即总金额")
+    @TableField("summoney")
+    private BigDecimal summoney;
+
+    @ApiModelProperty(value = "上线时间")
+    @TableField("showtime")
+    private Date showtime;
+
+    @ApiModelProperty(value = "活动状态")
+    @TableField("activitystatus")
+    private Boolean activitystatus;
+
+    @ApiModelProperty(value = "状态")
+    @TableField("status")
+    private Boolean status;
+
+    @ApiModelProperty(value = "备用字段")
+    @TableField("data")
+    private String data;
+
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "createtime", fill = FieldFill.INSERT)
+    private Date createtime;
+
+    @ApiModelProperty(value = "最后更新时间")
+    @TableField("updatetime")
+    private Date updatetime;
+
+
+}

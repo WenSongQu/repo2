@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCInvestmentDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCInvestmentDO">
+        <id column="id" property="id" />
+        <result column="useruid" property="useruid" />
+        <result column="kind" property="kind" />
+        <result column="field" property="field" />
+        <result column="rounds" property="rounds" />
+        <result column="currencytype" property="currencytype" />
+        <result column="amountup" property="amountup" />
+        <result column="amountdown" property="amountdown" />
+        <result column="area" property="area" />
+        <result column="summary" property="summary" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, useruid, kind, field, rounds, currencytype, amountup, amountdown, area, summary, status, data, createtime, updatetime
+    </sql>
+
+</mapper>

@@ -1,0 +1,93 @@
+package com.supergenius.admin.capital.controller;
+
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.api.R;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.vo.VCFiltrateOrderVO;
+import com.supergenius.admin.capital.model.vo.VCGuaranteeAndRecommendDisplayVO;
+import com.supergenius.admin.capital.model.vo.VCInvoicePrintVO;
+import com.supergenius.admin.capital.model.vo.VCOrderinfoVO;
+import com.supergenius.admin.capital.service.IVCOrdersService;
+import com.supergenius.admin.utils.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.List;
+
+@Api("保推人订单")
+@Slf4j
+@RequestMapping("/guaranteeOrder")
+@RestController
+public class GuaranteeOrderController {
+    @Autowired
+    IVCOrdersService ivcOrdersService;
+
+    @ApiOperation("获取保推人订单列表")
+    @GetMapping("/list/{pageNum}")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNum", value = "页数", required = true, paramType = "path", dataType = "int"),
+            @ApiImplicitParam(name = "filtrate", value = "过滤条件", paramType = "query", dataType = "String")
+    })
+    public R<IPage<VCGuaranteeAndRecommendDisplayVO>> getselectVCGuaranteeDisplayDO(@RequestParam(name = "filtrate", required = false) String filtrateStr, @PathVariable int pageNum) {
+        log.info(filtrateStr + "--------------");
+        VCFiltrateOrderVO vcFiltrateVO = JSON.parseObject(filtrateStr, VCFiltrateOrderVO.class);
+        log.info(vcFiltrateVO + "--------------");
+        IPage<VCGuaranteeAndRecommendDisplayVO> vcGuaranteeAndRecommendDisplayDOIPage = ivcOrdersService.selectVCGuaranteeDisplayDO(new Page(pageNum, 10), vcFiltrateVO);
+        if (vcGuaranteeAndRecommendDisplayDOIPage.getRecords().size() > 0) {
+            return R.ok(vcGuaranteeAndRecommendDisplayDOIPage).setCode(200);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+    @ApiOperation("获取保推人订单信息")
+    @GetMapping("/{oid}")
+    @ApiImplicitParam(name = "oid", value = "订单uid", paramType = "path", dataType = "String")
+    public R<VCOrderinfoVO> getMemberOrderByOid(@PathVariable("oid") String oid) {
+        VCOrderinfoVO vcOrderinfo = ivcOrdersService.selectOrderInfo(oid);
+        if (vcOrderinfo != null) {
+            return R.ok(vcOrderinfo).setCode(200);
+        }
+        return R.failed(new ErrorCode(401));
+    }
+
+    @ApiOperation("通过订单编号退款")
+    @ApiImplicitParam(name = "oid", value = "订单编号", dataType = "String", allowMultiple = true, paramType = "query")
+    @PostMapping("/return")
+    public R<Boolean> returnOrder(String... oids) {
+        int i = ivcOrdersService.returnOrder(Arrays.asList(oids));
+        if (i != oids.length) {
+            return R.failed(new ErrorCode(401));
+        }
+        return R.ok(true).setCode(200);
+    }
+
+    @ApiOperation("开票操作")
+    @ApiImplicitParam(name = "oids", value = "订单uid", allowMultiple = true, dataType = "String", paramType = "query")
+    @PostMapping("/invoice")
+    public R<String> invoiceOids(String... oids) {
+        ivcOrdersService.invoiceed(Arrays.asList(oids));
+        return R.ok("success").setCode(200);
+    }
+
+    @ApiOperation("导出excel")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "oids", value = "订单编号", allowMultiple = true, dataType = "String", paramType = "query"),
+    })
+    @GetMapping("/Excel")
+    public void printExcel(HttpServletResponse response, String oids) throws Exception {
+        List<String> ids = JsonUtil.jsonStringToList(oids, String.class);
+        List<VCInvoicePrintVO> vcInvoicePrintDO = ivcOrdersService.getVCInvoicePrintDO(ids);
+        ExcelUtil.simpleWrite(System.currentTimeMillis() + "", VCInvoicePrintVO.class, vcInvoicePrintDO, response);
+
+    }
+
+
+}

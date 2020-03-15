@@ -1,0 +1,19 @@
+package com.supergenius.admin.utils;
+
+import com.supergenius.admin.utils.image.IM4GraphicsMagickEngine;
+import org.junit.jupiter.api.Test;
+
+/**
+ * @author : qws
+ * @project : proj-supergenius-vc-admin
+ * @description : 工具测试类
+ * @date : 2019-12-05 09:36
+ **/
+public class UtilsTest {
+    @Test
+    public void ImageTest() throws Exception{
+        IM4GraphicsMagickEngine im4GraphicsMagickEngine=new IM4GraphicsMagickEngine();
+        String[] strings = im4GraphicsMagickEngine.cropImage(100, 100, "C:\\Users\\20930\\Pictures\\Camera Roll\\1.png");
+        System.out.println(strings);
+    }
+}

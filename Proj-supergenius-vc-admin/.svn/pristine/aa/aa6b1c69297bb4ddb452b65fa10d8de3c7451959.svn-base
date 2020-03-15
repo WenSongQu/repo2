@@ -1,0 +1,20 @@
+package com.supergenius.admin.capital.service.impl;
+
+import com.supergenius.admin.capital.model.VCProjectDO;
+import com.supergenius.admin.capital.mapper.VCProjectDao;
+import com.supergenius.admin.capital.service.IVCProjectService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
+
+/**
+ * <p>
+ *  服务实现类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Service
+public class VCProjectServiceImpl extends ServiceImpl<VCProjectDao, VCProjectDO> implements IVCProjectService {
+
+}

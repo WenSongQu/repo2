@@ -1,0 +1,31 @@
+package com.supergenius.admin.capital.service;
+
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.*;
+import com.baomidou.mybatisplus.extension.service.IService;
+import io.swagger.models.auth.In;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * <p>
+ *  服务类
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+public interface IVCOrdersService extends IService<VCOrdersDO> {
+    IPage<VCMemberOrderDisplayDO> selectMemberOrderDisplayDO(Page page, Map<String, Object> map);
+    VCOrderinfo selectOrderInfo(String oid);
+    Integer invoiceed(List<String> oids);
+    List<VCInvoicePrintDO> getVCInvoicePrintDO(List<String> list);
+    IPage<VCGuaranteeAndRecommendDisplayDO> selectVCGuaranteeDisplayDO(Page page, @Param("map") Map<String, Object> map);
+    IPage<VCGuaranteeAndRecommendDisplayDO> selectVCrecommendDisplayDO(Page page, @Param("map") Map<String, Object> map);
+    int returnOrder(List<String> oids);
+
+
+}

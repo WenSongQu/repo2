@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCProjectDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCProjectDO">
+        <id column="id" property="id" />
+        <result column="pid" property="pid" />
+        <result column="useruid" property="useruid" />
+        <result column="projectcode" property="projectcode" />
+        <result column="name" property="name" />
+        <result column="avatarbig" property="avatarbig" />
+        <result column="avatarmedium" property="avatarmedium" />
+        <result column="avatarlittle" property="avatarlittle" />
+        <result column="original" property="original" />
+        <result column="field" property="field" />
+        <result column="area" property="area" />
+        <result column="display" property="display" />
+        <result column="company" property="company" />
+        <result column="summary" property="summary" />
+        <result column="slogan" property="slogan" />
+        <result column="stage" property="stage" />
+        <result column="overview" property="overview" />
+        <result column="analysis" property="analysis" />
+        <result column="profit" property="profit" />
+        <result column="prospect" property="prospect" />
+        <result column="projectdisplay" property="projectdisplay" />
+        <result column="sharestock" property="sharestock" />
+        <result column="estimate" property="estimate" />
+        <result column="projecttype" property="projecttype" />
+        <result column="resalestatus" property="resalestatus" />
+        <result column="reportcount" property="reportcount" />
+        <result column="followcount" property="followcount" />
+        <result column="freezecount" property="freezecount" />
+        <result column="finacingstatus" property="finacingstatus" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pid, useruid, projectcode, name, avatarbig, avatarmedium, avatarlittle, original, field, area, display, company, summary, slogan, stage, overview, analysis, profit, prospect, projectdisplay, sharestock, estimate, projecttype, resalestatus, reportcount, followcount, freezecount, finacingstatus, status, data, createtime, updatetime
+    </sql>
+
+</mapper>

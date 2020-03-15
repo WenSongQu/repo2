@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCFeedbacksDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCFeedbacksDO">
+        <id column="id" property="id" />
+        <result column="uid" property="uid" />
+        <result column="useruid" property="useruid" />
+        <result column="username" property="username" />
+        <result column="userside" property="userside" />
+        <result column="toid" property="toid" />
+        <result column="toname" property="toname" />
+        <result column="tostatus" property="tostatus" />
+        <result column="reporttype" property="reporttype" />
+        <result column="reason" property="reason" />
+        <result column="content" property="content" />
+        <result column="images" property="images" />
+        <result column="mobile" property="mobile" />
+        <result column="email" property="email" />
+        <result column="handle" property="handle" />
+        <result column="revieweruid" property="revieweruid" />
+        <result column="reviewer" property="reviewer" />
+        <result column="reviewtime" property="reviewtime" />
+        <result column="secondrevieweruid" property="secondrevieweruid" />
+        <result column="secondreviewer" property="secondreviewer" />
+        <result column="secondreviewtime" property="secondreviewtime" />
+        <result column="secondreview" property="secondreview" />
+        <result column="status" property="status" />
+        <result column="data" property="data" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, useruid, username, userside, toid, toname, tostatus, reporttype, reason, content, images, mobile, email, handle, revieweruid, reviewer, reviewtime, secondrevieweruid, secondreviewer, secondreviewtime, secondreview, status, data, createtime, updatetime
+    </sql>
+    <select id="getPagePerson" resultType="com.supergenius.admin.capital.model.vo.VCFeedBacksPersonDisplayVO">
+        SELECT
+  f.username,
+  f.toname,
+  l.`name`,
+  f.createtime,
+  f.mobile,
+  f.handle,
+  f.tostatus,
+  f.secondreview
+FROM
+  feedbacks AS f
+  LEFT JOIN label AS l
+    ON f.reason = l.`uid`
+    <trim prefix="where">
+    f.reporttype=#{labelType} and
+    <if test="map.username!=null and map.username=''">
+        f.username like CONCAT('%',#{map.username},'%') and
+    </if>
+        <if test="map.toname!=null and map.toname=''">
+            f.toname like CONCAT('%',#{map.toname},'%') and
+        </if>
+        <if test="map.reason!=null and map.reason=''">
+            f.reason=#{map.reason} and
+        </if>
+        <if test="map.result!=null">
+            f.result=#{map.result} and
+        </if>
+        <if test="map.startTime!=null and map.startTime=''">
+            f.createtime &gt; #{map.startTime} and
+        </if>
+        <if test="map.endTime!=null and map.endTime=''">
+            f.createtime   &lt; #{map.endTime} and
+        </if>
+        <if test="map.tostatus!=null">
+            f.tostatus = #{map.tostatus} and
+        </if>
+        <if test="map.secondreview!=null ">
+            f.secondreview = #{map.secondreview} and
+        </if>
+    </trim>
+        <if test="map.order != null and map.order!='' ">ORDER BY f.createtime ${map.order}</if>
+    </select>
+    <select id="getOne" resultType="com.supergenius.admin.capital.model.vo.VCFeedBacksPersonInfoVO">
+        select
+  f.uid,
+  f.username,
+  f.toname,
+  l.`name`,
+  f.createtime,
+  f.mobile,
+  f.handle,
+  f.tostatus,
+  f.secondreview,
+  f.email,
+  f.content,
+  f.images,
+  f.handle,
+  f.images,
+  f.secondreview
+from
+  feedbacks as f
+  left join label as l
+    on f.reason = l.`uid`
+    where f.uid=#{uid}
+    </select>
+    <select id="getPageProject" resultType="com.supergenius.admin.capital.model.vo.VCFeedbackProjectDisplayVO">
+        SELECT
+  f.`uid`,
+  f.`username`,
+  f.toname,
+  p.`name` AS pname,
+  l.`name` AS iname,
+  f.`createtime`,
+  f.`mobile`,
+  f.`handle`,
+  p.`projectstatus`,
+  f.`secondreview`
+FROM
+  feedbacks AS f
+  LEFT JOIN project AS p
+    ON f.toid = p.`useruid`
+  LEFT JOIN label AS l
+    ON f.`reason` = l.`uid`
+    <trim prefix="where">
+        f.reporttype=#{labelType} and
+        <if test="map.username!=null and map.username=''">
+            f.username like CONCAT('%',#{map.username},'%') and
+        </if>
+        <if test="map.toname!=null and map.toname=''">
+            f.toname like CONCAT('%',#{map.toname},'%') and
+        </if>
+        <if test="map.pname!=null and map.pname=''">
+            p.`name` like CONCAT('%',#{map.pname},'%') and
+        </if>
+        <if test="map.reason!=null and map.reason=''">
+            f.reason=#{map.reason} and
+        </if>
+        <if test="map.result!=null">
+            f.result=#{map.result} and
+        </if>
+        <if test="map.startTime!=null and map.startTime=''">
+            f.createtime &gt; #{map.startTime} and
+        </if>
+        <if test="map.endTime!=null and map.endTime=''">
+            f.createtime   &lt; #{map.endTime} and
+        </if>
+        <if test="map.secondreview!=null ">
+            f.secondreview = #{map.secondreview} and
+        </if>
+        <if test="map.projectstatus!=null ">
+            p.projectstatus = #{map.projectstatus} and
+        </if>
+    </trim>
+        <if test="map.order != null and map.endTime!='' ">ORDER BY f.createtime ${map.order}</if>
+    </select>
+    <select id="getOneProject" resultType="com.supergenius.admin.capital.model.vo.VCFeedbackProjectInfoVO">
+        select
+  f.uid,
+  f.username,
+  f.toname,
+  l.`name`,
+  f.createtime,
+  f.mobile,
+  f.handle,
+  f.tostatus,
+  f.secondreview,
+  f.email,
+  f.content,
+  f.images,
+  f.handle,
+  f.images,
+  f.secondreview,
+   f.`content`,
+  f.`images`
+from
+  feedbacks as f
+  left join label as l
+    on f.reason = l.`uid`
+    where f.uid=#{uid}
+    </select>
+    <select id="getPageMessage"
+            resultType="com.supergenius.admin.capital.model.vo.VCFeedbacksMessageDisplayVO">
+        SELECT
+  f.`uid`,
+  f.`username`,
+  f.`toname`,
+  l.`name`,
+  u.`freezecount`,
+  f.`mobile`,
+  f.`handle`,
+  f.`tostatus`,
+  f.`createtime`
+FROM
+  feedbacks AS f
+  LEFT JOIN USER AS u
+    ON f.`toid` = u.`useruid`
+    LEFT JOIN label AS l
+    ON f.`reason`=l.`uid`
+    <trim prefix="where" suffixOverrides="and">
+        f.reporttype=#{labelType} and
+        <if test="map.username!=null and map.username=''">
+            f.username like CONCAT('%',#{map.username},'%') and
+        </if>
+        <if test="map.toname!=null and map.toname=''">
+            f.toname like CONCAT('%',#{map.toname},'%') and
+        </if>
+        <if test="map.labeluid!=null and map.labeluid=''">
+            f.reason=#{map.labeluid} and
+        </if>
+        <if test="map.result!=null">
+            f.result=#{map.result} and
+        </if>
+        <if test="map.minfreezedcount!=null">
+            u.`freezecount` &gt; #{map.minfreezedcount} and
+        </if>
+        <if test="map.maxfreezdcount!=null">
+            u.`freezecount` &lt; #{map.minfreezedcount} and
+        </if>
+        <if test="map.starttime!=null and map.starttime=''">
+            f.createtime &gt; #{map.starttime} and
+        </if>
+        <if test="map.endtime!=null and map.endtime=''">
+            f.createtime   &lt; #{map.endtime} and
+        </if>
+        <if test="map.tostatus!=null ">
+            f.tostatus = #{map.tostatus} and
+        </if>
+    </trim>
+        <if test="map.order != null and map.order!='' ">ORDER BY f.createtime ${map.order}</if>
+    </select>
+    <select id="getOneMessage" resultType="com.supergenius.admin.capital.model.vo.VCFeedbacksMessageInfoVO">
+SELECT
+  f.`uid`,
+  f.`username`,
+  f.`toname`,
+  l.`name`,
+  u.`freezecount`,
+  f.`mobile`,
+  f.`handle`,
+  f.`tostatus`,
+  f.`createtime`,
+  f.`email`,
+  f.`content`,
+  f.`images`,
+FROM
+  feedbacks AS f
+  LEFT JOIN USER AS u
+    ON f.`toid` = u.`useruid`
+    LEFT JOIN label AS l
+    ON f.`reason`=l.`uid`
+    WHERE f.`uid`=#{uid}
+    </select>
+    <select id="getPageEssay" resultType="com.supergenius.admin.capital.model.vo.VCFeedbacksEssayDisplayVO">
+        SELECT
+  f.`uid`,
+  f.`username`,
+  ui.`name` AS toname,
+  l.`name` AS lname,
+  f.`createtime`,
+  f.`mobile`,
+  f.`handle`,
+  f.tostatus
+FROM
+  feedbacks AS f
+  LEFT JOIN essay AS e
+    ON f.`toid` = e.`uid`
+  LEFT JOIN `guserdb2`.`userinfo` AS ui
+    ON e.`useruid` = ui.`uid`
+  LEFT JOIN label AS l
+    ON l.`uid` = f.`reason`
+    <trim prefix="where" suffixOverrides="and">
+        f.reporttype=#{labelType} and
+        <if test="map.username!=null and map.username=''">
+            f.username like CONCAT('%',#{map.username},'%') and
+        </if>
+        <if test="map.toname!=null and map.toname=''">
+            ui.`name` like CONCAT('%',#{map.toname},'%') and
+        </if>
+        <if test="map.labeluid!=null and map.labeluid=''">
+            f.reason=#{map.labeluid} and
+        </if>
+        <if test="map.starttime!=null and map.starttime=''">
+            f.createtime &gt; #{map.starttime} and
+        </if>
+        <if test="map.endtime!=null and map.endtime=''">
+            f.createtime   &lt; #{map.endtime} and
+        </if>
+        <if test="map.result!=null">
+            f.result=#{map.result} and
+        </if>
+        <if test="map.tostatus!=null ">
+            f.tostatus = #{map.tostatus} and
+        </if>
+    </trim>
+        <if test="map.order != null and map.order!='' ">ORDER BY f.createtime ${map.order}</if>
+    </select>
+    <select id="getOneEssay" resultType="com.supergenius.admin.capital.model.vo.VCFeedbacksEssayInfoVO">
+        SELECT
+  f.`uid`,
+  f.`username`,
+  ui.`name` AS toname,
+  l.`name` AS lname,
+  f.`createtime`,
+  f.`mobile`,
+  f.`handle`,
+  f.tostatus
+FROM
+  feedbacks AS f
+  LEFT JOIN essay AS e
+    ON f.`toid` = e.`uid`
+  LEFT JOIN `guserdb2`.`userinfo` AS ui
+    ON e.`useruid` = ui.`uid`
+  LEFT JOIN label AS l
+    ON l.`uid` = f.`reason`
+    where f.uid=#{uid}
+    </select>
+
+</mapper>

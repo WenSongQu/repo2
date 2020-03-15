@@ -1,0 +1,50 @@
+package com.supergenius.admin.utils;
+
+import com.supergenius.admin.capital.mapper.VCContentDao;
+import com.supergenius.admin.capital.model.VCContentDO;
+import com.supergenius.admin.capital.service.IVCContentService;
+import com.supergenius.admin.enums.EContentType;
+import com.supergenius.admin.enums.ESide;
+import com.supergenius.admin.security.model.AuthorityVO;
+import com.supergenius.admin.security.service.Authorities;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+/**
+ * @author : qws
+ * @project : proj-supergenius-vc-admin
+ * @description : 工具测试类
+ * @date : 2019-12-05 09:36
+ **/
+public class UtilsTest {
+    @Autowired
+    VCContentDao vcContentDao;
+    @Autowired
+    IVCContentService contentService;
+
+
+    @Test
+    void jsonTest() throws IOException, URISyntaxException {
+//        String s = Files.lines(Paths.get(ClassLoader.getSystemResource("static/authorities.json").toURI())).collect(Collectors.joining());
+//        Objects.requireNonNull(JsonUtil.jsonStringToList(s, AuthorityVO.class)).forEach(System.out::println);
+        vcContentDao.insert(new VCContentDO());
+    }
+
+    @Test
+    void authoritiesTest(){
+        Authorities.getInstance().authorityList().forEach(System.out::println);
+    }
+
+    @Test
+    void  test(){
+      contentService.upOrder(ESide.capital, EContentType.index);
+
+    }
+}

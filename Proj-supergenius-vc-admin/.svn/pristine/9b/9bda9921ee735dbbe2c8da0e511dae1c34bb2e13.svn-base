@@ -1,0 +1,1 @@
+INSERT INTO guserdb2.visitor (uid, loginip, nickname, avatar, createtime, useruid) VALUES ('uid00000000000000000000000000000', '192.168.1.100', null, null, '2016-09-05 11:29:23', '');

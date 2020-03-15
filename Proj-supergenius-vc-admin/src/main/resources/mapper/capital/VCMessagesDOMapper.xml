@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.supergenius.admin.capital.mapper.VCMessagesDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.supergenius.admin.capital.model.VCMessagesDO">
+        <id column="id" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="fromuid" property="fromuid"/>
+        <result column="touid" property="touid"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="kind" property="kind"/>
+        <result column="time" property="time"/>
+        <result column="status" property="status"/>
+        <result column="data" property="data"/>
+        <result column="createtime" property="createtime"/>
+        <result column="updatetime" property="updatetime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, fromuid, touid, title, content, kind, time, status, data, createtime, updatetime
+    </sql>
+    <select id="getPage" resultType="com.supergenius.admin.capital.model.vo.VCMessageDisplayVO">
+
+        SELECT DISTINCT
+        m1.`uid`,
+        m1.`createtime`,
+        m1.`type`,
+        m1.`content`,
+        m2.m2name AS fromname,
+        m3.toname AS toname
+        FROM
+        messages AS m1
+        INNER JOIN
+        (SELECT
+        ui.`name` AS m2name,
+        m.`fromuid` AS fuid
+        FROM
+        messages AS m
+        LEFT JOIN `guserdb2`.`userinfo` AS ui
+        ON m.`fromuid` = ui.`uid`) AS m2
+        LEFT JOIN
+        (SELECT
+        ui.`name` AS toname,
+        m.`touid` AS tpuidm3
+        FROM
+        messages AS m
+        LEFT JOIN `guserdb2`.`userinfo` AS ui
+        ON m.`touid` = ui.`uid`) AS m3
+        ON m1.fromuid = m2.`fuid`
+        AND m1.touid = m3.tpuidm3
+        <trim prefix="where" suffixOverrides="and">
+            m1.`status` !=#{state}
+            <if test="map.sendName!=null and map.sendName!=''">
+                m2.`m2name` like CONCAT('%',#{map.sendName},'%') and
+            </if>
+            <if test="map.keyWord!=null and map.keyWord!=''">
+                m1.`content` like CONCAT('%',#{map.keyWord},'%') and
+            </if>
+            <if test="map.startTime!=null and map.startTime!=''">
+                m1.`createtime`  &gt; map.startTime and
+            </if>
+            <if test="map.endTime!=null and map.endTime!=''">
+                m1.`createtime`  &lt;  map.endTime and
+            </if>
+        </trim>
+        <if test="map.order != null and map.endTime!='' ">ORDER BY createtime ${map.order}</if>
+    </select>
+
+</mapper>

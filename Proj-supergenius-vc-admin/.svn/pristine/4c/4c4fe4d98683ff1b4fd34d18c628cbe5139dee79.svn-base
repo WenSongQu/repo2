@@ -1,0 +1,29 @@
+package com.supergenius.admin.capital.model.vo;
+
+import com.supergenius.admin.enums.EPlatform;
+import com.supergenius.admin.enums.EStatus;
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value="创业者融资记录", description="")
+public class VCEnterpreneurmemberFinancingVO {
+    private String projectcode;
+    private String name;
+    private Integer rounds;
+    private BigDecimal amount;
+    private EPlatform platform;
+    private EStatus  status; //状态[0:enable,1:disable]
+    private String investor;
+    private Date createtime;
+
+
+
+}

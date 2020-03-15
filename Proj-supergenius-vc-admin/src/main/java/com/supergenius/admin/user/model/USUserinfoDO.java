@@ -1,0 +1,180 @@
+package com.supergenius.admin.user.model;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
+import com.supergenius.admin.enums.StatusEnum;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 用户信息表
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("userinfo")
+@ApiModel(value="USUserinfoDO对象", description="用户信息表")
+public class USUserinfoDO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "唯一uid")
+    @TableId(value = "uid", type = IdType.AUTO)
+    private String uid;
+
+    @ApiModelProperty(value = "真实姓名,2-4个汉字")
+    @TableField("name")
+    private String name;
+
+    @ApiModelProperty(value = "用户英文名")
+    @TableField("nickname")
+    private String nickname;
+
+    @ApiModelProperty(value = "会员名")
+    @TableField("showname")
+    private String showname;
+
+    @ApiModelProperty(value = "证件类型")
+    @TableField("idtype")
+    private Integer idtype;
+
+    @ApiModelProperty(value = "身份证号")
+    @TableField("identityid")
+    private String identityid;
+
+    @ApiModelProperty(value = "性别(1:男2:女)")
+    @TableField("gender")
+    private Boolean gender;
+
+    @ApiModelProperty(value = "出生年月日")
+    @TableField("birthday")
+    private Date birthday;
+
+    @ApiModelProperty(value = "毕业院校")
+    @TableField("college")
+    private String college;
+
+    @ApiModelProperty(value = "现居地址")
+    @TableField("address")
+    private String address;
+
+    @ApiModelProperty(value = "QQ")
+    @TableField("qq")
+    private String qq;
+
+    @ApiModelProperty(value = "微信")
+    @TableField("wx")
+    private String wx;
+
+    @ApiModelProperty(value = "新浪微博")
+    @TableField("sina")
+    private String sina;
+
+    @ApiModelProperty(value = "注册通道")
+    @TableField("aisle")
+    private Integer aisle;
+
+    @ApiModelProperty(value = "第三方登录昵称")
+    @TableField("othernicks")
+    private String othernicks;
+
+    @ApiModelProperty(value = "第三方登录头像")
+    @TableField("otheravatar")
+    private String otheravatar;
+
+    @TableField("country")
+    private String country;
+
+    @ApiModelProperty(value = "士兵证")
+    @TableField("soldier")
+    private String soldier;
+
+    @ApiModelProperty(value = "护照")
+    @TableField("passport")
+    private String passport;
+
+    @ApiModelProperty(value = "MSN")
+    @TableField("msn")
+    private String msn;
+
+    @ApiModelProperty(value = "用户冻结状态")
+    @TableField("freeze")
+    private Integer freeze;
+
+    @ApiModelProperty(value = "个人头像180x180")
+    @TableField("avatarbig")
+    private String avatarbig;
+
+    @ApiModelProperty(value = "中头像90x90")
+    @TableField("avatar")
+    private String avatar;
+
+    @ApiModelProperty(value = "小头像36x36")
+    @TableField("avatarlittle")
+    private String avatarlittle;
+
+    @ApiModelProperty(value = "原图")
+    @TableField("original")
+    private String original;
+
+    @ApiModelProperty(value = "自我简介最多150字")
+    @TableField("summary")
+    private String summary;
+
+    @ApiModelProperty(value = "职位")
+    @TableField("job")
+    private String job;
+
+    @ApiModelProperty(value = "部门")
+    @TableField("department")
+    private String department;
+
+    @ApiModelProperty(value = "供职单位")
+    @TableField("company")
+    private String company;
+
+    @ApiModelProperty(value = "二级域名")
+    @TableField("domain")
+    private String domain;
+
+    @ApiModelProperty(value = "个人荣誉使用 ，以json格式存储(list(map))")
+    @TableField("honor")
+    private String honor;
+
+    @ApiModelProperty(value = "教育经历使用，以json格式存储(list(map))")
+    @TableField("education")
+    private String education;
+
+    @ApiModelProperty(value = "工作经历使用，以json格式存储(list(map))")
+    @TableField("work")
+    private String work;
+
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "createtime", fill = FieldFill.INSERT)
+    private Date createtime;
+
+    @ApiModelProperty(value = "最后更新时间")
+    @TableField("updatetime")
+    private Date updatetime;
+
+    @TableField("oid")
+    private Integer oid;
+
+    @TableField("status")
+    private Integer status;
+
+
+}

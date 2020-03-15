@@ -1,0 +1,19 @@
+package com.supergenius.admin;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.web.WebAppConfiguration;
+
+/**
+ * 注意测试时候模块分包测试，不要在这里测试
+ */
+@SpringBootTest
+@WebAppConfiguration
+public abstract class BaseProjSupergeniusVcAdminApplicationTests {
+
+
+    @Test
+    void contextLoads() {
+    }
+
+}

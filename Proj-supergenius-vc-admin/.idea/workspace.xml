@@ -1,0 +1,1582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fd36440f-0f1b-4ed8-9774-dc2d3ab41a90" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/supergenius/admin/utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/supergenius/admin/utils/FileUtil.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="proj-supergenius-vc-admin" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.6375516">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/impl/VCFeedbacksServiceImpl.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="816">
+                  <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+                  <folding>
+                    <element signature="e#1284#1285#0" expanded="true" />
+                    <element signature="e#1331#1332#0" expanded="true" />
+                    <element signature="e#1632#1633#0" expanded="true" />
+                    <element signature="e#1686#1687#0" expanded="true" />
+                    <element signature="e#1990#1991#0" expanded="true" />
+                    <element signature="e#2044#2045#0" expanded="true" />
+                    <element signature="e#2290#2291#0" expanded="true" />
+                    <element signature="e#2317#2318#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksEssayDisplayVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="380">
+                  <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksMessageController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="114">
+                  <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="15" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksEssayController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="721">
+                  <caret line="45" column="65" lean-forward="true" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/StringBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="679">
+                  <caret line="135" column="17" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/AbstractStringBuilder.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="443" column="37" selection-start-line="443" selection-start-column="37" selection-end-line="443" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/StringBuffer.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="337">
+                  <caret line="270" column="20" lean-forward="true" selection-start-line="270" selection-start-column="20" selection-end-line="270" selection-end-column="20" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/IVCFeedbacksService.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="28" column="24" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/mapper/VCFeedbacksDao.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="31" selection-start-line="31" selection-end-line="32" selection-end-column="64" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/capital/VCFeedbacksDOMapper.xml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="804">
+                  <caret line="313" column="22" selection-start-line="313" selection-start-column="22" selection-end-line="313" selection-end-column="22" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbackProjectVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="380">
+                  <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateTrainactivityVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateUserVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="171">
+                  <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFinancingRecordVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="418">
+                  <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacksEssayVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="57">
+                  <caret line="3" selection-start-line="3" selection-end-line="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCGuaranteeAndRecommendDisplayVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateProjectVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksMessageInfoVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="608">
+                  <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="35" selection-end-column="26" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksEssayInfoVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="15" column="35" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="35" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksMessageDisplayVO.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="494">
+                  <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>type</find>
+      <find>where</find>
+      <find>selectVCVideoVOOrderDisplayDO</find>
+      <find>roadshowvideo</find>
+      <find>eassy</find>
+      <find>comment</find>
+      <find>头像</find>
+      <find>标签</find>
+      <find>复</find>
+      <find>内容</find>
+      <find>m</find>
+      <find>条件</find>
+      <find>message</find>
+      <find>@ApiModelProperty(&quot;会议室名称&quot;)</find>
+      <find>kind</find>
+      <find>8080</find>
+      <find>反馈</find>
+      <find>feed</find>
+      <find>reason</find>
+      <find>handle</find>
+      <find>username</find>
+      <find>reporttype</find>
+      <find>状态</find>
+      <find>secondreview</find>
+      <find>temp</find>
+      <find>tostatus</find>
+      <find>essay</find>
+      <find>order</find>
+      <find>appen</find>
+      <find>append</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/IVCLabelService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/impl/VCLabelServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/supergenius/admin/utils/UtilsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/supergenius/admin/BaseProjSupergeniusVcAdminApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/LabelController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/enums/EIdentity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/IVCTemplateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/mapper/VCTrainactivityDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/impl/VCTemplateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/TemplateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/VCMessagesDO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/mapper/VCEssayDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/capital/VCEssayDOMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateMessageVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCMessageDisplay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/IVCMessagesService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/convert/EIdentitySerialize.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCMessageDisplayVO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/capital/VCMessagesDOMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/impl/VCMessagesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/ProjectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedBacksPersonDisplayVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/mapper/VCMessagesDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacks.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/FeedbacksInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedBacksPersonInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksPersonController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/VCFeedbacksDO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/enums/EFeedbackType.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/db/schema/gventurecapitaldb.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/enums/EProjectStatus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/VCProjectDO.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/43926349-8836-48c5-b03d-61e4331bbcb7/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbackProjectDisplayVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbackProjectVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbackProjectInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksMessageDisplayVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacksMessageVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksMessageInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksPorjectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksMessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacksEssayVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFinancingRecordVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksEssayDisplayVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksEssayInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/mapper/VCFeedbacksDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/capital/VCFeedbacksDOMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/IVCFeedbacksService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/impl/VCFeedbacksServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksEssayController.java" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/mw/apache-maven-3.5.2" />
+        <option name="userSettingsFile" value="D:\mw\apache-maven-3.5.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="proj-supergenius-vc-admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="proj-supergenius-vc-admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="proj-supergenius-vc-admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="proj-supergenius-vc-admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+          <item name="io.springfox:springfox-swagger-ui:2.9.2" type="c0821a7e:MavenProjectsStructure$DependencyNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectId" id="1UXy9xCS1lOrYG1Wkwldjr23Y1q" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="capital" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="capital" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="capital" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="capital" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="capital" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="capital" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="supergenius" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj-supergenius-vc-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proj-supergenius-vc-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584098367601" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.supergenius.admin.capital.model.vo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.supergenius.admin.utils" />
+      <recent name="com.supergenius.admin.enums" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\20930\Desktop\Proj-supergenius-vc-admin\src\main\java\com\supergenius\admin\utils" />
+      <recent name="C:\Users\20930\Desktop\Proj-supergenius-vc-admin\src\main\java\com\supergenius\admin" />
+      <recent name="C:\Users\20930\Desktop\Proj-supergenius-vc-admin\src\main\java\com\supergenius\admin\capital\model\vo" />
+      <recent name="C:\Users\20930\Desktop\Proj-supergenius-vc-admin\src\main\java\com\supergenius\admin\enums" />
+      <recent name="C:\Users\20930\Desktop\Proj-supergenius-vc-admin\src\main\resources\db\data\capital" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ProjSupergeniusVcAdminApplication">
+    <configuration name="ProjSupergeniusVcAdminApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.supergenius.admin.ProjSupergeniusVcAdminApplication" />
+      <module name="proj-supergenius-vc-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.supergenius.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilsTest.jsonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj-supergenius-vc-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.supergenius.admin.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.supergenius.admin.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.supergenius.admin.utils.UtilsTest" />
+      <option name="METHOD_NAME" value="jsonTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilsTest.tes1t" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj-supergenius-vc-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.supergenius.admin.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.supergenius.admin.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.supergenius.admin.utils.UtilsTest" />
+      <option name="METHOD_NAME" value="tes1t" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilsTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj-supergenius-vc-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.supergenius.admin.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.supergenius.admin.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.supergenius.admin.utils.UtilsTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UtilsTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proj-supergenius-vc-admin" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.supergenius.admin.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.supergenius.admin.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.supergenius.admin.utils.UtilsTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjSupergeniusVcAdminApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="proj-supergenius-vc-admin" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.supergenius.admin.ProjSupergeniusVcAdminApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UtilsTest.test2" />
+        <item itemvalue="JUnit.UtilsTest.test" />
+        <item itemvalue="JUnit.UtilsTest.tes1t" />
+        <item itemvalue="Application.ProjSupergeniusVcAdminApplication" />
+        <item itemvalue="JUnit.UtilsTest.jsonTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\曲问嵩\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fd36440f-0f1b-4ed8-9774-dc2d3ab41a90" name="Default Changelist" comment="" />
+      <created>1575517086122</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575517086122</updated>
+      <workItem from="1575517092020" duration="48050000" />
+      <workItem from="1575941704196" duration="33316000" />
+      <workItem from="1576124740998" duration="1958000" />
+      <workItem from="1576199995854" duration="585000" />
+      <workItem from="1576201734337" duration="150165000" />
+      <workItem from="1577155571533" duration="1095000" />
+      <workItem from="1577156753734" duration="124000" />
+      <workItem from="1577156904544" duration="1158000" />
+      <workItem from="1577158404648" duration="653000" />
+      <workItem from="1577159082265" duration="325000" />
+      <workItem from="1577159431149" duration="1367000" />
+      <workItem from="1577160821132" duration="951000" />
+      <workItem from="1577161801622" duration="286000" />
+      <workItem from="1577162108988" duration="4109000" />
+      <workItem from="1577171998195" duration="469000" />
+      <workItem from="1577172485571" duration="408000" />
+      <workItem from="1577173017864" duration="54598000" />
+      <workItem from="1577418486697" duration="89448000" />
+      <workItem from="1578116083301" duration="638000" />
+      <workItem from="1578273776339" duration="60799000" />
+      <workItem from="1578618540650" duration="22179000" />
+      <workItem from="1578729374842" duration="31674000" />
+      <workItem from="1579051524576" duration="90596000" />
+      <workItem from="1581303954413" duration="38205000" />
+      <workItem from="1581479396531" duration="10598000" />
+      <workItem from="1581910405289" duration="716000" />
+      <workItem from="1581911136417" duration="470000" />
+      <workItem from="1581911614959" duration="163000" />
+      <workItem from="1581912321002" duration="38000" />
+      <workItem from="1581912428732" duration="5986000" />
+      <workItem from="1581920492400" duration="1890000" />
+      <workItem from="1581922459850" duration="3177000" />
+      <workItem from="1581926011460" duration="5635000" />
+      <workItem from="1581931946947" duration="9099000" />
+      <workItem from="1581997084027" duration="60586000" />
+      <workItem from="1582366676891" duration="13904000" />
+      <workItem from="1582605431114" duration="11933000" />
+      <workItem from="1582644829420" duration="13921000" />
+      <workItem from="1582775545292" duration="11442000" />
+      <workItem from="1582870737716" duration="1204000" />
+      <workItem from="1582879989220" duration="12370000" />
+      <workItem from="1583140079112" duration="236000" />
+      <workItem from="1583140476661" duration="70000" />
+      <workItem from="1583200970267" duration="14198000" />
+      <workItem from="1583223233762" duration="18128000" />
+      <workItem from="1583718157552" duration="24173000" />
+      <workItem from="1583941832904" duration="595000" />
+      <workItem from="1583942663776" duration="222000" />
+      <workItem from="1583990387386" duration="31000" />
+      <workItem from="1584007567525" duration="17863000" />
+    </task>
+    <task id="LOCAL-00001" summary="0">
+      <created>1575596410643</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1575596410643</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Revision &#10;Committed by &#10;Comments: 添加数据 修改application.yml文件&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1575875999061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575875999061</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Revision &#10;Committed by &#10;Comments: 添加枚举 修改bean&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1575961871793</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575961871793</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Revision &#10;Committed by &#10;Comments: 修改dao 增加两个bean&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576124894865</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1576124894865</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Revision &#10;Committed by &#10;Comments: 修改dao 修改bean  project数据类行&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576482027791</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576482027791</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Revision &#10;Committed by &#10;Comments: 完成首页的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576579411656</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576579411656</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Revision &#10;Committed by &#10;Comments: 完成首页的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576632943392</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576632943392</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Revision &#10;Committed by &#10;Comments: 完成首页的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576640801398</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576640801398</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Revision &#10;Committed by &#10;Comments: 完成会员订单的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576737422341</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576737422341</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Revision &#10;Committed by &#10;Comments: 完成会员订单的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576835367960</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1576835367961</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Revision &#10;Committed by &#10;Comments: 完成会员订单的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1576912178927</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1576912178927</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Revision &#10;Committed by &#10;Comments: 完成包推荐人订单页面&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577085105075</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1577085105075</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Revision &#10;Committed by &#10;Comments: 修改会员订单页面&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577172436481</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1577172436481</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Revision &#10;Committed by &#10;Comments: 修改会员订单页面&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577176957732</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1577176957732</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Revision &#10;Committed by &#10;Comments: 完成初步订单模块&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577348930187</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1577348930187</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Revision &#10;Committed by &#10;Comments: 完成初步订单模块&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577430181203</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1577430181203</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Revision &#10;Committed by &#10;Comments: 完成初步订单模块&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577439129189</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1577439129189</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Revision &#10;Committed by &#10;Comments: 添加注释&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577514468026</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1577514468026</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Revision &#10;Committed by &#10;Comments: 添加注释&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577515571088</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1577515571088</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Revision &#10;Committed by &#10;Comments: 修改导出excle的问题&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1577676155803</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1577676155803</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Revision &#10;Committed by &#10;Comments: 修改导出excle的问题&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1578023177418</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1578023177418</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Revision &#10;Committed by &#10;Comments: 修改导出excle的问题&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0">
+      <created>1578120121997</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1578120121997</updated>
+    </task>
+    <task id="LOCAL-00023" summary="wo">
+      <created>1578629075679</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1578629075679</updated>
+    </task>
+    <task id="LOCAL-00024" summary="wo">
+      <created>1578729537835</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1578729537835</updated>
+    </task>
+    <task id="LOCAL-00025" summary="wo">
+      <created>1579053071491</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1579053071491</updated>
+    </task>
+    <task id="LOCAL-00026" summary="wo">
+      <created>1579165379832</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1579165379832</updated>
+    </task>
+    <task id="LOCAL-00027" summary="wo">
+      <created>1579419581438</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1579419581438</updated>
+    </task>
+    <task id="LOCAL-00028" summary="wo">
+      <created>1579487072587</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1579487072646</updated>
+    </task>
+    <task id="LOCAL-00029" summary="wo">
+      <created>1581414819976</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1581414819976</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="UtilsTest_tes1t - 2020.02.17 at 17h 09m 11s.xml">
+      <configuration name="UtilsTest.tes1t" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_tes1t - 2020.02.17 at 17h 22m 20s.xml">
+      <configuration name="UtilsTest.tes1t" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_tes1t - 2020.02.17 at 17h 28m 44s.xml">
+      <configuration name="UtilsTest.tes1t" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_tes1t - 2020.02.17 at 17h 29m 04s.xml">
+      <configuration name="UtilsTest.tes1t" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_tes1t - 2020.02.17 at 17h 33m 25s.xml">
+      <configuration name="UtilsTest.tes1t" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_test - 2020.02.17 at 21h 43m 28s.xml">
+      <configuration name="UtilsTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_test - 2020.02.17 at 21h 45m 12s.xml">
+      <configuration name="UtilsTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_test - 2020.02.17 at 21h 45m 42s.xml">
+      <configuration name="UtilsTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_test - 2020.02.17 at 21h 46m 04s.xml">
+      <configuration name="UtilsTest.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="UtilsTest_test2 - 2020.03.03 at 14h 49m 31s.xml">
+      <configuration name="UtilsTest.test2" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="228050000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8721137" visible="true" weight="0.2249467" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Favorites" order="7" sideWeight="0.12788633" side_tool="true" weight="0.2655691" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.032502707" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39925373" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Duplicate detector" order="16" weight="0.329602" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24982105" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.021474589" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.11023622" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Database" order="9" weight="0.20895523" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8721137" visible="true" weight="0.015991472" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Web" order="6" side_tool="true" />
+      <window_info id="Favorites" order="7" sideWeight="0.12788633" side_tool="true" weight="0.2655691" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.32936078" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32876712" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.032502707" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39925373" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Spring" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32876712" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Duplicate detector" order="16" weight="0.329602" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24982105" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.021474589" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.11023622" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Database" order="9" weight="0.20895523" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 添加数据 修改application.yml文件&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 添加枚举 修改bean&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 修改dao 增加两个bean&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 修改dao 修改bean  project数据类行&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 完成首页的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 完成会员订单的查询&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 完成包推荐人订单页面&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 修改会员订单页面&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 完成初步订单模块&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 添加注释&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="Revision &#10;Committed by &#10;Comments: 修改导出excle的问题&#10;TODO: &#10;IDs: Project: Proj-supergenius-vc-admin Version:v:1.0.0" />
+    <MESSAGE value="wo" />
+    <option name="LAST_COMMIT_MESSAGE" value="wo" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/72955a6f-7438-4d3a-a310-d8af61a28f76/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/43926349-8836-48c5-b03d-61e4331bbcb7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-datasourcehome.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCEnterpreneurmemberBaseCompanyVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCEnterpreneurmemberBasePersonVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/FeedbacksInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/enums/EProjectStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/VCProjectDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2413">
+          <caret line="142" column="30" lean-forward="true" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/enums/StatusEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedBacksPersonInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="631">
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedBacksPersonDisplayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbackProjectDisplayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/ContentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="60" column="13" lean-forward="true" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateMeetingVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCEnterpreneurmemberOrderVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCEnterpreneurmemberInfoPersonVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCEntrepreneurmemberDisplayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/VCFeedbacksDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateMessageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateOrderVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateSettledVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateSignupVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateTrainactivityVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateUserVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCGuaranteeAndRecommendDisplayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateIncubatorVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateProjectVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbackProjectVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/enums/ELabelType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/EntrepreneurMemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksPersonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksPorjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/schema/gventurecapitaldb.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="96" column="11" selection-start-line="96" selection-start-column="3" selection-end-line="96" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacksEssayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFiltrateFeedbacksMessageVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="33" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFinancingRecordVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbackProjectInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="13" selection-start-line="13" selection-end-line="16" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksMessageDisplayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksMessageInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksEssayDisplayVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/model/vo/VCFeedbacksEssayInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/capital/VCFeedbacksDOMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="313" column="22" selection-start-line="313" selection-start-column="22" selection-end-line="313" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/mapper/VCFeedbacksDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="31" selection-start-line="31" selection-end-line="32" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/impl/VCFeedbacksServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="65" column="45" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+          <folding>
+            <element signature="e#1284#1285#0" expanded="true" />
+            <element signature="e#1331#1332#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1686#1687#0" expanded="true" />
+            <element signature="e#1990#1991#0" expanded="true" />
+            <element signature="e#2044#2045#0" expanded="true" />
+            <element signature="e#2290#2291#0" expanded="true" />
+            <element signature="e#2317#2318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="135" column="17" selection-start-line="135" selection-start-column="17" selection-end-line="135" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="443" column="37" selection-start-line="443" selection-start-column="37" selection-end-line="443" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/StringBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="270" column="20" lean-forward="true" selection-start-line="270" selection-start-column="20" selection-end-line="270" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/service/IVCFeedbacksService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/supergenius/admin/capital/controller/FeedbacksEssayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="721">
+          <caret line="45" column="65" lean-forward="true" selection-start-line="45" selection-start-column="65" selection-end-line="45" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+package com.supergenius.admin.capital.model.vo;
+
+import lombok.Data;
+
+import java.util.Date;
+
+@Data
+public class VCFiltrateVO {
+    private String ordercode;
+    private Date begintime;
+    private Date endtime;
+    private Integer site;
+    private Integer orderstatus;
+    private Integer needinvoice;
+    private Integer invoicestatus;
+    private Integer type;
+    private Integer order;
+
+}

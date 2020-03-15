@@ -1,0 +1,138 @@
+package com.supergenius.admin.capital.model;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("feedbacks")
+@ApiModel(value="VCFeedbacksDO对象", description="")
+public class VCFeedbacksDO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "主键")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    @ApiModelProperty(value = "唯一uid")
+    @TableField(value = "uid", fill = FieldFill.INSERT)
+    private String uid;
+
+    @ApiModelProperty(value = "举报(反馈)人的uid")
+    @TableField("useruid")
+    private String useruid;
+
+    @ApiModelProperty(value = "举报(反馈)人的名字")
+    @TableField("username")
+    private String username;
+
+    @ApiModelProperty(value = "举报(反馈)人的身份")
+    @TableField("userside")
+    private String userside;
+
+    @ApiModelProperty(value = "被举报人的uid或者被举报的帖子的id")
+    @TableField("toid")
+    private String toid;
+
+    @ApiModelProperty(value = "被举报人的名字或者被举报的帖子的名字")
+    @TableField("toname")
+    private String toname;
+
+    @ApiModelProperty(value = "被举报人的账户状态或者被举报的帖子的账户状态")
+    @TableField("tostatus")
+    private Boolean tostatus;
+
+    @ApiModelProperty(value = "举报类型(项目或人)")
+    @TableField("reporttype")
+    private Boolean reporttype;
+
+    @ApiModelProperty(value = "举报原因")
+    @TableField("reason")
+    private Boolean reason;
+
+    @ApiModelProperty(value = "举报(反馈)内容")
+    @TableField("content")
+    private String content;
+
+    @ApiModelProperty(value = "举报(反馈)图片以json的方式记录")
+    @TableField("images")
+    private String images;
+
+    @ApiModelProperty(value = "手机")
+    @TableField("mobile")
+    private String mobile;
+
+    @ApiModelProperty(value = "邮箱")
+    @TableField("email")
+    private String email;
+
+    @ApiModelProperty(value = "处理结果")
+    @TableField("handle")
+    private Boolean handle;
+
+    @ApiModelProperty(value = "审核人id")
+    @TableField("revieweruid")
+    private String revieweruid;
+
+    @ApiModelProperty(value = "审核人名字")
+    @TableField("reviewer")
+    private String reviewer;
+
+    @ApiModelProperty(value = "审核时间")
+    @TableField("reviewtime")
+    private Date reviewtime;
+
+    @ApiModelProperty(value = "复审人id")
+    @TableField("secondrevieweruid")
+    private String secondrevieweruid;
+
+    @ApiModelProperty(value = "复审人名字")
+    @TableField("secondreviewer")
+    private String secondreviewer;
+
+    @ApiModelProperty(value = "复审时间")
+    @TableField("secondreviewtime")
+    private Date secondreviewtime;
+
+    @ApiModelProperty(value = "复审状态")
+    @TableField("secondreview")
+    private Boolean secondreview;
+
+    @ApiModelProperty(value = "状态")
+    @TableField("status")
+    private Boolean status;
+
+    @ApiModelProperty(value = "备用字段")
+    @TableField("data")
+    private String data;
+
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "createtime", fill = FieldFill.INSERT)
+    private Date createtime;
+
+    @ApiModelProperty(value = "最后更新时间")
+    @TableField("updatetime")
+    private Date updatetime;
+
+
+}

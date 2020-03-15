@@ -1,0 +1,59 @@
+package com.supergenius.admin.capital.mapper;
+
+import com.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.supergenius.admin.capital.model.VCUserDO;
+import com.supergenius.admin.capital.model.vo.*;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+/**
+ * <p>
+ * Mapper 接口
+ * </p>
+ *
+ * @author zuoyu
+ * @since 2019-12-04
+ */
+@DS(value = "master_capital")
+@Repository
+public interface VCUserDao extends BaseMapper<VCUserDO> {
+    //获取创业者会员展示列表
+    IPage<VCEntrepreneurmemberDisplayVO> selectMemberOrderDisplayDO(Page page, @Param("map") VCFiltrateUserVO vcFiltrateUserVO);
+    //获取创业者会员展示列表 冻结账号
+    void freezeUser(@Param("list") List<String> users);
+    //解冻账号
+    void unFreezeUser(@Param("list") List<String> users);
+    //查询创业者信息的基本信息（个人）
+    VCEnterpreneurmemberBasePersonVO getVCEnterpreneurmemberBaseInfoVOById(@Param("uid") String uid);
+    //查询创业者融资纪录
+    List<VCEnterpreneurmemberFinancingVO> getVCEnterpreneurmemberFinancingInfoVOById(@Param("uid") String uid,@Param("pageNum") int pageNum);
+    //查询创业者订单纪录
+    List<VCEnterpreneurmemberOrderVO> getVCEnterpreneurmemberOrderVOById(@Param("uid") String uid,@Param("pageNum") int pageNum);
+    //查询创业者信息的基本信息（公司）
+    VCEnterpreneurmemberBaseCompanyVO getVCEnterpreneurmemberBaseCompanyVOById(@Param("uid") String uid);
+    //查询投资人信息的展示信息
+    IPage<VCInvestorsDisplayVO> selectInvestorsDisplayVO(Page page, @Param("map") VCFiltrateUserVO vcFiltrateUserVO);
+
+    //查询创业者信息的基本信息（个人）
+    VCInvestorsBasePersonInfoVO getVCInvestorsBasePersonInfoVCById(@Param("uid") String uid);
+    //查询创业者信息的基本信息（公司）
+    List<VCInvestorsBaseConpantyInfoVO> getVCInvestorsBaseConpantyInfoVCById(@Param("uid") String uid);
+
+
+
+    //查询保推人列表
+    IPage<VCUserinfoVo> getGuaranteeMembers(Page page, @Param("map") VCFiltrateUserVO vcFiltrateUserVO);
+    //查询推荐人列表
+    IPage<VCUserinfoVo> getRecommendMembers(Page page, @Param("map") VCFiltrateUserVO vcFiltrateUserVO);
+    //查询召集人列表
+    IPage<VCUserinfoVo> getConvenerMembers(Page page, @Param("map") VCFiltrateUserVO vcFiltrateUserVO);
+
+
+
+
+}

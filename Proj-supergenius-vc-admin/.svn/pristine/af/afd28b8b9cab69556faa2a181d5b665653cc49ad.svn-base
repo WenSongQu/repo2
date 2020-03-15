@@ -1,0 +1,22 @@
+package com.supergenius.admin.capital.model.vo;
+
+import com.supergenius.admin.enums.EPayMethod;
+import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.math.BigDecimal;
+import java.util.Date;
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@ApiModel(value="VCEnterpreneurmemberOrderVO对象", description="")
+public class VCEnterpreneurmemberOrderVO {
+    private String ordercode;
+    private String name;
+    private BigDecimal amount;
+    private EPayMethod site;
+    private Date createtime;
+
+}
